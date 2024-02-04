@@ -17,6 +17,7 @@ export default function SignInForm() {
         type='email' placeholder="Username" variant={'outline'}
         outline={'none'} 
         size={'md'}
+        required
       />
     </FormControl>
     <FormControl color={'white'}>
@@ -25,6 +26,7 @@ export default function SignInForm() {
         name="password"
         type='password' placeholder="Password" variant={'outline'}
         size={'md'}
+        required
       />
     </FormControl>
 
