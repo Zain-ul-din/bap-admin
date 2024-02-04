@@ -1,27 +1,35 @@
-import { Button, Flex, FormControl, FormLabel, Input, Radio } 
+import { Button, Checkbox, Flex, FormControl, FormLabel, Input } 
   from "@chakra-ui/react";
 
 export default function SignInForm() {
   return <Flex as={'form'} flexDirection={'column'}
-    gap={3} w={'100%'}
+    gap={3} w={'100%'} onSubmit={(e)=>{
+      e.preventDefault()
+      // TODOS: handle form data here
+      console.log(Object.fromEntries(new FormData(e.target as HTMLFormElement).entries()))
+    }}
   >
     <FormControl color={'white'}>
       <FormLabel fontWeight={'light'} 
       >Username</FormLabel>
-      <Input type='email' placeholder="Username" variant={'outline'}
+      <Input 
+        name="username"
+        type='email' placeholder="Username" variant={'outline'}
         outline={'none'} 
         size={'md'}
       />
     </FormControl>
     <FormControl color={'white'}>
       <FormLabel fontWeight={'light'}>Password</FormLabel>
-      <Input type='password' placeholder="Password" variant={'outline'}
+      <Input 
+        name="password"
+        type='password' placeholder="Password" variant={'outline'}
         size={'md'}
       />
     </FormControl>
 
     <FormControl color={'white'} display={'flex'} alignItems={'center'} fontWeight={'light'}>
-      <Radio mr={2} colorScheme="white" /> Remember me?
+      <Checkbox mr={2} colorScheme="white" name="rememberMe" /> Remember me?
     </FormControl>
 
     <Button color={'red.800'} mt={2} py={1} size={'md'}
@@ -31,4 +39,3 @@ export default function SignInForm() {
     </Button>
   </Flex>
 }
-
