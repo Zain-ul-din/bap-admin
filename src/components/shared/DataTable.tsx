@@ -1,4 +1,5 @@
-import { Button, Flex, FlexProps, Heading, Table, TableContainer, Tag, Tbody, Td, Th, Thead, Tr } from "@chakra-ui/react";
+import { Button, Flex, FlexProps, Heading, Table, TableContainer, Tbody, Td, Th, Thead, Tr } from "@chakra-ui/react";
+import StatusTag from "../design/StatusTag";
 
 interface DataTableProps extends FlexProps {
   heading: string
@@ -42,7 +43,7 @@ export default function DataTable({
             <Td>742 Horace Haven</Td>
             <Td>66771 Doyle Light</Td>
             <Td>
-              <Tag colorScheme="blue">In Progress</Tag>
+              <StatusTag colorScheme="blue" status="completed">In Progress</StatusTag>
             </Td>
           </Tr>})}
         </Tbody>
