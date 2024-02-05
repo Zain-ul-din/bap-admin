@@ -2,7 +2,7 @@ import { Box, Button, ButtonProps, Flex, Heading, Image, Stack, Text, useMediaQu
 import { ReactNode, useState } from "react"
 import OrganizationIcon from "../icons/OrganizationIcon"
 import { ROUTES } from "../../lib/constant"
-import { IconProps } from "../types/IconProps"
+import { IconProps } from "../../types/IconProps"
 
 import AmbulanceIcon from "../icons/AmbulanceIcon"
 import FluentPersonIcon from "../icons/FluentPersonIcon"

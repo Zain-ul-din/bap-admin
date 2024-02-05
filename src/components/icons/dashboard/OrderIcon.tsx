@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { IconProps } from "../../types/IconProps" 
+import { IconProps } from "../../../types/IconProps" 
 
 export default function OrderIcon ({
   active, ...rest
