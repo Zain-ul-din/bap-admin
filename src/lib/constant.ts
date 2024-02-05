@@ -10,4 +10,9 @@ export const ROUTES = {
 }
 
 
-
+export const SUB_ROUTES: Partial<Record<keyof typeof ROUTES, {[key:string]: string}[]>> = {
+  'Users': [
+    { "Individual": "/individual" },
+    { "Medical Crop": "/medicalcrop" },
+  ]
+}
