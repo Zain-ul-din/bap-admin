@@ -30,6 +30,22 @@ const components = {
         },
       },
     },
+  }, 
+  Table: {
+    variants: {
+      simple: {
+        th: {
+          textAlign: 'center',
+          padding: '1rem',
+          color: '#343A40'
+        },
+        td: {
+          textAlign: 'center',
+          whiteSpace: 'nowrap',
+          color: '#6C757D'
+        }
+      }
+    }
   }
 }
 
@@ -39,6 +55,10 @@ const colors = {
   },
   red: {
     500: '#E71B40'
+  },
+  blackAlpha: {
+    500: '#030303',
+    600: '#030304DB'
   }
 }
 
