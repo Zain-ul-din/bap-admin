@@ -1,7 +1,7 @@
-import { Box, Button, ButtonProps, Flex, Image, useMediaQuery, useTimeout } from "@chakra-ui/react"
-import { ReactNode, useState } from "react"
+import { Box, Button, ButtonProps, Collapse, Flex, Image, useDisclosure, useMediaQuery, useTimeout } from "@chakra-ui/react"
+import { ReactNode, useEffect, useState } from "react"
 import OrganizationIcon from "../icons/OrganizationIcon"
-import { ROUTES } from "../../lib/constant"
+import { ROUTES, SUB_ROUTES } from "../../lib/constant"
 import { IconProps } from "../../types/IconProps"
 
 import AmbulanceIcon from "../icons/AmbulanceIcon"
@@ -11,7 +11,7 @@ import SettingIcons from "../icons/SettingsIcon"
 import CategoryIcon from "../icons/CategoryIcon"
 import FluentSupportIcon from "../icons/FluentSupportIcon"
 import ChatIcon from "../icons/ChatIcon"
-import { CloseIcon, HamburgerIcon } from "@chakra-ui/icons"
+import { ChevronRightIcon, CloseIcon, HamburgerIcon } from "@chakra-ui/icons"
 import { useLocation, Link } from "react-router-dom"
 
 export default function DashboardLayout({
@@ -32,6 +32,7 @@ export default function DashboardLayout({
       alignItems={'center'} gap={'max(2rem, 5%)'} 
       position={isMdScreen ? 'fixed': 'initial'}
       bg={'white'} zIndex={99}
+      overflowY={'auto'}
       className={`${(isOpen || !isMdScreen) ? "sticky-sidebar-open" : "sticky-sidebar-close"} ${isMounted && "ease-in-out"}`}
     >
       {(isOpen && isMdScreen) && 
@@ -97,7 +98,7 @@ const Sidebar = ()=> {
         Icon, text
       }, i)=> {
         return <SideBarLink key={i} icon={(props)=> <Icon style={{ marginRight: '0.6rem' }} {...props}/>}
-          active={pathname === ROUTES[text]} link={ROUTES[text]}
+          active={pathname === ROUTES[text]} link={ROUTES[text]} path={text}
         >
           {text}
         </SideBarLink>
@@ -108,15 +109,27 @@ const Sidebar = ()=> {
 
 interface SideBarLinkProps extends ButtonProps {
   active?: boolean,
+  path?: keyof typeof ROUTES
   link: string,
-  icon: (props: IconProps)=> ReactNode
+  icon?: (props: IconProps)=> ReactNode
 }
 
 const SideBarLink = ({
-  icon, link, active, ...rest
+  icon, path, link, active, ...rest
 }: SideBarLinkProps)=> {
-  return <Link to={link}>
+
+  const hasSubRoutes = (path || "") in SUB_ROUTES
+  const { isOpen, onToggle, onClose } = useDisclosure()
+
+  const { pathname } = useLocation()
+
+  useEffect(()=> {
+    if(!active) onClose()
+  }, [pathname, onClose, active])
+
+  return <><Link to={link}>
     <Button 
+      onClick={onToggle}
       w={'100%'}
       pl={2} 
       colorScheme="red" 
@@ -130,11 +143,33 @@ const SideBarLink = ({
       _hover={{
         bg: '', opacity: 0.9
       }} {...rest}
+      rightIcon={
+        hasSubRoutes ? 
+        <ChevronRightIcon 
+          position={'absolute'} right={'5px'} top={'30%'} 
+          __css={{
+            transform: isOpen ? "rotate(90deg)" : undefined,
+            transition: "transform 0.3s"
+          }}
+        /> 
+        : <></>
+      }
     >
-      {icon({
-        active
-      })}
+      {icon && icon({active})}
       {rest.children}
     </Button>
   </Link>
+  
+    {hasSubRoutes && <Collapse in={isOpen} transition={{ enter: { duration: 0.5 } }} animateOpacity>
+      <Flex flexDir={'column'} pl={5}>
+        {SUB_ROUTES[path as keyof typeof ROUTES]?.map((route, idx)=> {
+          return <SideBarLink key={idx} link={route.link}
+            active={pathname === route.link}
+          >
+            {route.name}
+          </SideBarLink>
+        })} 
+      </Flex>
+    </Collapse>}
+  </>
 }
