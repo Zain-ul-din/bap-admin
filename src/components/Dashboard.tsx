@@ -1,20 +1,27 @@
 import { Flex, Grid, GridItem, Heading, Stack, Text, useMediaQuery } from "@chakra-ui/react";
 import OrderIcon from "./icons/dashboard/OrderIcon";
 import DataTable from "./shared/DataTable";
+import DashboardHeader from "./shared/DashboardHeader";
 
 export default function Dashboard() {
-  return <Flex w={'100%'} h={'100%'} p={3} flexDir={'column'}
-    gap={'0.5rem'} pb={5}
-  >
-    <StatCards />
-    <DataTable 
-      heading="Recent Ambulance Rides"
+  return <>
+    <DashboardHeader 
+      heading="Dashboard"
+      description="Hi, Welcome to BAP Admin!"
     />
-    <DataTable 
-      heading="New Organizations Registered"
-    />
-    <Flex minH={'1rem'}></Flex>
-  </Flex>
+    <Flex w={'100%'} h={'100%'} p={3} flexDir={'column'}
+      gap={'0.5rem'} pb={5}
+    >
+      <StatCards />
+      <DataTable 
+        heading="Recent Ambulance Rides"
+        />
+      <DataTable 
+        heading="New Organizations Registered"
+      />
+      <Flex minH={'1rem'}></Flex>
+    </Flex>
+  </>
 }
 
 const StatCards = ()=> {

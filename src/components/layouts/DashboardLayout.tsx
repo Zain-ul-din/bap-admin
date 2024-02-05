@@ -1,4 +1,4 @@
-import { Box, Button, ButtonProps, Flex, Heading, Image, Stack, Text, useMediaQuery, useTimeout } from "@chakra-ui/react"
+import { Box, Button, ButtonProps, Flex, Image, useMediaQuery, useTimeout } from "@chakra-ui/react"
 import { ReactNode, useState } from "react"
 import OrganizationIcon from "../icons/OrganizationIcon"
 import { ROUTES } from "../../lib/constant"
@@ -59,17 +59,6 @@ export default function DashboardLayout({
           }}/>
           Support Chat
         </Button>
-      </Flex>
-      
-      <Flex w={'100%'} px={'1.5rem'} py={3} bg={'var(--black-color)'} color={'white'}>
-        <Stack spacing={0}>
-          <Heading fontSize={'lg'}  fontWeight={'bold'}>
-            Dashboard
-          </Heading>
-          <Text fontSize={'sm'} fontWeight={'normal'}>
-          Hi, Welcome to BAP Admin!
-          </Text>
-        </Stack>
       </Flex>
       {children}
     </Flex>
@@ -149,5 +138,3 @@ const SideBarLink = ({
     </Button>
   </Link>
 }
-
-

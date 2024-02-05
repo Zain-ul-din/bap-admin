@@ -8,6 +8,7 @@ import { ROUTES } from './lib/constant.ts'
 import SignIn from './components/SignIn.tsx'
 import RootLayout from './components/layouts/RootLayout.tsx'
 import Dashboard from './components/Dashboard.tsx'
+import Organization from './components/Organization.tsx'
 
 const router = createBrowserRouter([
   {
@@ -19,7 +20,7 @@ const router = createBrowserRouter([
     element: <RootLayout />,
     children: [
       { path: ROUTES['Dashboard'], element: <Dashboard/> },
-      { path: ROUTES['Organization'], element: <>Organization</> },
+      { path: ROUTES['Organization'], element: <Organization /> },
     ]
   }
 ])
