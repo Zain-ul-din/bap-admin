@@ -1,26 +1,30 @@
-import { Tag, TagProps } from "@chakra-ui/react";
+import { Tag, TagProps } from '@chakra-ui/react';
 
-type Status = "pending" | "cancelled" | "completed"
+type Status = 'pending' | 'cancelled' | 'completed';
 
 interface StatusTagProps extends TagProps {
-  status: Status
+  status: Status;
 }
 
 const defaultProps: Record<Status, TagProps> = {
-  "pending": {
+  pending: {
     bg: 'blue.500',
-    color: 'white'
+    color: 'white',
   },
-  "completed": {
+  completed: {
     bg: 'green.500',
-    color: 'white'
-  }, 
-  "cancelled": {
+    color: 'white',
+  },
+  cancelled: {
     bg: 'red.500',
-    color: 'white'
-  }, 
-} 
+    color: 'white',
+  },
+};
 
-export default function StatusTag({ status, children, ...rest } : StatusTagProps) {
-  return <Tag {...defaultProps[status]} {...rest}>{children}</Tag>
+export default function StatusTag({ status, children, ...rest }: StatusTagProps) {
+  return (
+    <Tag {...defaultProps[status]} {...rest}>
+      {children}
+    </Tag>
+  );
 }
