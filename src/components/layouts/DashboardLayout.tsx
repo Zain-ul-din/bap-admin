@@ -1,7 +1,7 @@
 import { Box, Button, ButtonProps, Flex, Heading, Image, Stack, Text, useMediaQuery, useTimeout } from "@chakra-ui/react"
 import { ReactNode, useState } from "react"
 import OrganizationIcon from "../icons/OrganizationIcon"
-import { ROUTES } from "../lib/constant"
+import { ROUTES } from "../../lib/constant"
 import { IconProps } from "../types/IconProps"
 
 import AmbulanceIcon from "../icons/AmbulanceIcon"
