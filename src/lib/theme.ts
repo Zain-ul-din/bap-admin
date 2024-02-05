@@ -46,6 +46,22 @@ const components = {
         }
       }
     }
+  },
+  Button: {
+    variants: {
+      red: {
+        bg: 'var(--red-grad)',
+        color: 'white',
+        fontSize: '1rem',
+        fontWeight: '400',
+        _hover: {
+          opacity: '0.9'
+        },
+        _active: {
+          opacity: '0.8'
+        }
+      }
+    }
   }
 }
 
