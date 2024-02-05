@@ -12,11 +12,12 @@ import CategoryIcon from "../icons/CategoryIcon"
 import FluentSupportIcon from "../icons/FluentSupportIcon"
 import ChatIcon from "../icons/ChatIcon"
 import { CloseIcon, HamburgerIcon } from "@chakra-ui/icons"
+import { useLocation, Link } from "react-router-dom"
 
 export default function DashboardLayout({
   children
 }: {
-  children: ReactNode
+  children?: ReactNode
 }) {
   
   const [isMdScreen] = useMediaQuery("(max-width: 850px)")
@@ -89,6 +90,9 @@ const dashboardLinks: {
 ]
 
 const Sidebar = ()=> {
+
+  const { pathname } = useLocation()
+  
   return <>
     <Box p={'max(2rem,12%)'} w={'100%'} justifyContent={'center'}>
       <Image 
@@ -104,7 +108,7 @@ const Sidebar = ()=> {
         Icon, text
       }, i)=> {
         return <SideBarLink key={i} icon={(props)=> <Icon style={{ marginRight: '0.6rem' }} {...props}/>}
-          active={i==0}
+          active={pathname === ROUTES[text]} link={ROUTES[text]}
         >
           {text}
         </SideBarLink>
@@ -114,31 +118,36 @@ const Sidebar = ()=> {
 }
 
 interface SideBarLinkProps extends ButtonProps {
-  active?: boolean
+  active?: boolean,
+  link: string,
   icon: (props: IconProps)=> ReactNode
 }
 
 const SideBarLink = ({
-  icon, active, ...rest
+  icon, link, active, ...rest
 }: SideBarLinkProps)=> {
-  return <Button pl={2} 
-    colorScheme="red" 
-    justifyContent={'flex-start'}
-    fontWeight={'normal'} 
-    bg={active ? 'var(--red-grad)' : 'transparent'} 
-    color={active ? 'white' : "#8A92A6"}
-    _active={{
-      bg: ''
-    }}
-    _hover={{
-      bg: '', opacity: 0.9
-    }} {...rest}
-  >
-    {icon({
-      active
-    })}
-    {rest.children}
-  </Button>
+  return <Link to={link}>
+    <Button 
+      w={'100%'}
+      pl={2} 
+      colorScheme="red" 
+      justifyContent={'flex-start'}
+      fontWeight={'normal'} 
+      bg={active ? 'var(--red-grad)' : 'transparent'} 
+      color={active ? 'white' : "#8A92A6"}
+      _active={{
+        bg: ''
+      }}
+      _hover={{
+        bg: '', opacity: 0.9
+      }} {...rest}
+    >
+      {icon({
+        active
+      })}
+      {rest.children}
+    </Button>
+  </Link>
 }
 
 

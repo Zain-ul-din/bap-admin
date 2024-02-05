@@ -1,11 +1,13 @@
 export const ROUTES = {
-  'Dashboard': '/dashboard',
+  'Dashboard': '/',
   'Organization': '/organization',
   'Ambulance': '/ambulance',
   'Users': '/users',
   'Booking': '/booking',
   'Settings': '/settings',
-  'Emergency contact': '/emergency-contact'
+  'Emergency contact': '/emergency-contact',
+  'Sign in': '/signin'
 }
+
 
 
