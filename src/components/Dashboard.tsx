@@ -6,9 +6,10 @@ import DashboardHeader from "./shared/DashboardHeader";
 export default function Dashboard() {
   return <>
     <DashboardHeader 
-      heading="Dashboard"
       description="Hi, Welcome to BAP Admin!"
-    />
+    >
+      Dashboard
+    </DashboardHeader>
     <Flex w={'100%'} h={'100%'} p={3} flexDir={'column'}
       gap={'0.5rem'} pb={5}
     >
@@ -40,7 +41,7 @@ const StatCard = ()=> {
     display={'flex'}
     justifyContent={'center'} 
     alignItems={'center'}
-    shadow={'lg'}
+    shadow={'sm'}
     rounded={'md'}
     p={4}
     gap={3}

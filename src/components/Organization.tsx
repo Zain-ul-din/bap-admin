@@ -6,8 +6,9 @@ export default function Organization() {
   return <>
     <DashboardHeader 
       py={5}
-      heading="Organization (56)"
-    />
+    >
+      Organization (56)
+    </DashboardHeader>
     <Flex w={'100%'} h={'100%'} flexDir={'column'} p={4}>
       <DataTable 
         heading="Organization "
