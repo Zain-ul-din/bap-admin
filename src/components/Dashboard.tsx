@@ -18,9 +18,7 @@ export default function Dashboard() {
 }
 
 const StatCards = ()=> {
-  return <Grid templateColumns={'repeat(4, 1fr)'} py={2} w={'100%'}
-    gap={4}
-  >
+  return <Grid templateColumns={'repeat(4, 1fr)'} py={2} w={'100%'}gap={4}>
     {new Array(4).fill(' ').map((_,i)=>{
       return <StatCard key={i}/>
     })}

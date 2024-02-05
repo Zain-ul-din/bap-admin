@@ -18,7 +18,7 @@ export default function DataTable({
       <Heading fontSize={'xl'}>{heading}</Heading>
       <Button size={'sm'} ml={'auto'} 
         colorScheme="blackAlpha" px={3} fontWeight={'light'} height={'1.7rem'}>
-        View
+        View All
       </Button>
     </Flex>
     <TableContainer overflow={'auto'} w={'100%'}>
