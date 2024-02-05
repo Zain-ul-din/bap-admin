@@ -1,6 +1,11 @@
-import SignIn from "./components/SignIn";
+import Dashboard from "./components/Dashboard";
+import DashboardLayout from "./components/layouts/DashboardLayout";
 
 export default function App() {
-  return <SignIn />
+  return <DashboardLayout>
+    <Dashboard />
+  </DashboardLayout>
+  // return <SignIn />
 }
+
 
