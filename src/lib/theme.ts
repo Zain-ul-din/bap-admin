@@ -33,8 +33,17 @@ const components = {
   }
 }
 
+const colors = {
+  blue: {
+    500: 'rgba(50, 166, 249, 1)'
+  },
+  red: {
+    500: '#E71B40'
+  }
+}
+
 const theme = extendTheme({
-  fonts, components
+  fonts, colors, components
 })
 
 export default theme;
