@@ -1,5 +1,10 @@
 :root {
+  /* gradients */
+
   --red-grad: linear-gradient(180deg, #E71B40 0%, #A5001F 100%);
+
+  /* colors */
+  --black-color: #222225;
 }
 
 * {
@@ -144,4 +149,19 @@ body, html {
 #root {
   width: 100%;
   height: 100%;
+}
+
+
+/* animation */
+
+.sticky-sidebar-open {
+  transform: translateX(0);
+}
+
+.sticky-sidebar-close {
+  transform: translateX(-1000px);
+}
+
+.ease-in-out {
+  transition: transform 300ms ease-in-out;
 }
