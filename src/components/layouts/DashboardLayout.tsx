@@ -40,8 +40,11 @@ export default function DashboardLayout({
       <Sidebar />
     </Flex>
     
-    {/* content */}
-    <Flex flex={1} h={'100%'} flexDir={'column'} bg={'rgba(244, 244, 245, 1)'}>
+    {/* right side content */}
+    <Flex flex={1} h={'100%'} flexDir={'column'} bg={'rgba(244, 244, 245, 1)'}
+      maxWidth={isMdScreen ? '100%' : 'calc(100% - max(15rem,20%))'}
+      overflowY={'auto'}
+    >
       {/* top header */}
       <Flex w={'100%'} p={'1rem'} py={2}>
         {isMdScreen&& <Button colorScheme="red" onClick={()=> setIsOpen(true)}>
@@ -57,13 +60,13 @@ export default function DashboardLayout({
         </Button>
       </Flex>
       
-      <Flex w={'100%'} p={'1rem'} py={2} bg={'var(--black-color)'} color={'white'}>
+      <Flex w={'100%'} px={'1.5rem'} py={3} bg={'var(--black-color)'} color={'white'}>
         <Stack spacing={0}>
           <Heading fontSize={'lg'}  fontWeight={'bold'}>
             Dashboard
           </Heading>
           <Text fontSize={'sm'} fontWeight={'normal'}>
-            Hey there welcome to dashboard
+          Hi, Welcome to BAP Admin!
           </Text>
         </Stack>
       </Flex>
