@@ -21,6 +21,11 @@ const router = createBrowserRouter([
     children: [
       { path: ROUTES['Dashboard'], element: <Dashboard/> },
       { path: ROUTES['Organization'], element: <Organization /> },
+      { path: ROUTES['Users'], element: <>Users</> },
+      { path: ROUTES['Ambulance'], element: <>Ambulance</> },
+      { path: ROUTES['Booking'], element: <>Booking</> },
+      { path: ROUTES['Settings'], element: <>Settings</> },
+      { path: ROUTES['Emergency contact'], element: <>Emergency</> }
     ]
   }
 ])
