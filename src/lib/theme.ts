@@ -18,6 +18,7 @@ const menuBaseStyle = defineStyle({
     bg: "white",
     _hover: {
       bg: "gray.50",
+      color: 'black'
     },
     _focus: {
       bg: "gray.50",
