@@ -52,7 +52,7 @@ export default function DashboardLayout({ children }: { children?: ReactNode }) 
             <CloseIcon />{' '}
           </Button>
         )}
-        <Sidebar />
+        <Sidebar onRouteChange={() => setIsOpen(false)} />
       </Flex>
 
       {/* right side content */}
@@ -99,7 +99,7 @@ const dashboardLinks: {
   { text: 'Emergency contact', Icon: FluentSupportIcon },
 ];
 
-const Sidebar = () => {
+const Sidebar = ({ onRouteChange }: { onRouteChange?: () => void }) => {
   const { pathname } = useLocation();
 
   return (
@@ -117,6 +117,7 @@ const Sidebar = () => {
               active={pathname === ROUTES[text]}
               link={ROUTES[text]}
               path={text}
+              onRouteChange={onRouteChange}
             >
               {text}
             </SideBarLink>
@@ -131,10 +132,11 @@ interface SideBarLinkProps extends ButtonProps {
   active?: boolean;
   path?: keyof typeof ROUTES;
   link: string;
+  onRouteChange?: () => void;
   icon?: (props: IconProps) => ReactNode;
 }
 
-const SideBarLink = ({ icon, path, link, active, ...rest }: SideBarLinkProps) => {
+const SideBarLink = ({ icon, path, link, active, onRouteChange, ...rest }: SideBarLinkProps) => {
   const hasSubRoutes = (path || '') in SUB_ROUTES;
   const { isOpen, onToggle, onClose } = useDisclosure();
 
@@ -146,7 +148,12 @@ const SideBarLink = ({ icon, path, link, active, ...rest }: SideBarLinkProps) =>
 
   return (
     <>
-      <Link to={link}>
+      <Link
+        to={link}
+        onClick={() => {
+          onRouteChange && onRouteChange();
+        }}
+      >
         <Button
           onClick={onToggle}
           w={'100%'}
