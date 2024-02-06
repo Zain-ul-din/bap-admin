@@ -10,6 +10,7 @@ import RootLayout from './components/layouts/RootLayout.tsx';
 import Dashboard from './components/Dashboard.tsx';
 import Organization from './components/Organization.tsx';
 import Ambulance from './components/Ambulance.tsx';
+import Users from './components/Users.tsx';
 
 const router = createBrowserRouter([
   {
@@ -22,7 +23,7 @@ const router = createBrowserRouter([
     children: [
       { path: ROUTES['Dashboard'], element: <Dashboard /> },
       { path: ROUTES['Organization'], element: <Organization /> },
-      { path: ROUTES['Users'], element: <>Users</> },
+      { path: ROUTES['Users'], element: <Users /> },
       { path: ROUTES['Ambulance'], element: <Ambulance /> },
       { path: ROUTES['Booking'], element: <>Booking</> },
       { path: ROUTES['Settings'], element: <>Settings</> },

@@ -1,4 +1,4 @@
-import { extendTheme } from '@chakra-ui/react';
+import { extendTheme, defineStyle, defineStyleConfig } from '@chakra-ui/react';
 
 const fontFamily = `'Lufga', sans-serif`;
 
@@ -6,6 +6,28 @@ const fonts = {
   body: fontFamily,
   heading: fontFamily,
 };
+
+const menuBaseStyle = defineStyle({
+  list: {
+    bg: "white",
+    border: 'none',
+    shadow: 'md'
+  },
+  item: {
+    color: "var(--text-color)",
+    bg: "white",
+    _hover: {
+      bg: "gray.50",
+    },
+    _focus: {
+      bg: "gray.50",
+      opacity: '0.8'
+    },
+    _active: {
+      bg: 'gray.50'
+    }
+  },
+});
 
 const components = {
   Input: {
@@ -45,7 +67,21 @@ const components = {
           color: '#6C757D',
         },
       },
-    },
+      pagination: {
+        th: {
+          textAlign: 'center',
+          padding: '1rem',
+          color: '#343A40',
+          fontWeight: 600,
+          borderBottom: '2px solid rgba(223, 223, 223, 1)'
+        },
+        td: {
+          textAlign: 'center',
+          color: '#6C757D',
+          bg: 'white'
+        }
+      }
+    }
   },
   Button: {
     variants: {
@@ -63,6 +99,7 @@ const components = {
       },
     },
   },
+  Menu: defineStyleConfig({ baseStyle: menuBaseStyle })
 };
 
 const colors = {
@@ -80,6 +117,7 @@ const colors = {
     600: '#030304DB',
   },
   gray: {
+    50: '#6C757D25',
     200: '#898989'
   }
 };
