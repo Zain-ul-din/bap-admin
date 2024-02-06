@@ -98,6 +98,21 @@ const components = {
           opacity: '0.8',
         },
       },
+      white: {
+        bg: 'white',
+        color: 'black',
+        fontSize: '1rem',
+        fontWeight: '400',
+        shadow: 'sm',
+        _hover: {
+          opacity: '0.8',
+          shadow: 'md'
+        },
+        _active: {
+          opacity: '0.9',
+          shadow: 'lg'
+        }
+      }
     },
   },
   Menu: defineStyleConfig({ baseStyle: menuBaseStyle })
