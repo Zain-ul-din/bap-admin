@@ -79,6 +79,9 @@ const colors = {
     500: '#030303',
     600: '#030304DB',
   },
+  gray: {
+    200: '#898989'
+  }
 };
 
 const theme = extendTheme({

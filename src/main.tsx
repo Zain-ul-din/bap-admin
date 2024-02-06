@@ -9,6 +9,7 @@ import SignIn from './components/SignIn.tsx';
 import RootLayout from './components/layouts/RootLayout.tsx';
 import Dashboard from './components/Dashboard.tsx';
 import Organization from './components/Organization.tsx';
+import Ambulance from './components/Ambulance.tsx';
 
 const router = createBrowserRouter([
   {
@@ -22,7 +23,7 @@ const router = createBrowserRouter([
       { path: ROUTES['Dashboard'], element: <Dashboard /> },
       { path: ROUTES['Organization'], element: <Organization /> },
       { path: ROUTES['Users'], element: <>Users</> },
-      { path: ROUTES['Ambulance'], element: <>Ambulance</> },
+      { path: ROUTES['Ambulance'], element: <Ambulance /> },
       { path: ROUTES['Booking'], element: <>Booking</> },
       { path: ROUTES['Settings'], element: <>Settings</> },
       { path: ROUTES['Emergency contact'], element: <>Emergency</> },
