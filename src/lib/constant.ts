@@ -18,4 +18,10 @@ export const SUB_ROUTES: Partial<Record<keyof typeof ROUTES, { name: string; lin
     { name: 'Types', link: '/ambulance' },
     { name: 'Manufacturers', link: '/individual' },
   ],
+  Settings: [
+    { name: 'General', link: ROUTES['Settings'] },
+    { name: 'Payment Methods', link: '/settings/payment' },
+    { name: 'API Keys', link: '/settings/api' },
+    { name: 'Policy & Terms', link: '/settings/policy' },
+  ]
 };

@@ -12,6 +12,7 @@ import Organization from './components/Organization.tsx';
 import Ambulance from './components/Ambulance.tsx';
 import Users from './components/Users.tsx';
 import Booking from './components/Booking.tsx';
+import GeneralSettings from './components/GeneralSettings.tsx';
 
 const router = createBrowserRouter([
   {
@@ -27,7 +28,7 @@ const router = createBrowserRouter([
       { path: ROUTES['Users'], element: <Users /> },
       { path: ROUTES['Ambulance'], element: <Ambulance /> },
       { path: ROUTES['Booking'], element: <Booking /> },
-      { path: ROUTES['Settings'], element: <>Settings</> },
+      { path: ROUTES['Settings'], element: <GeneralSettings /> },
       { path: ROUTES['Emergency contact'], element: <>Emergency</> },
     ],
   },

@@ -52,6 +52,16 @@ const components = {
           },
         },
       },
+      filled: {
+        field: {
+          bg: 'gray.50',
+          color: 'black',
+          _hover: {
+            bg: 'gray.50',
+            shadow: 'md'
+          }
+        }
+      }
     },
   },
   Table: {
@@ -133,7 +143,7 @@ const colors = {
     600: '#030304DB',
   },
   gray: {
-    50: '#6C757D25',
+    50: 'rgba(244, 244, 245, 1)',
     200: '#898989'
   }
 };
