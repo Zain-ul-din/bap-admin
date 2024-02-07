@@ -30,7 +30,7 @@ export default function PaymentSettings() {
               </Text>
             </Stack>
             <Stack ml={'auto'} textAlign={'center'}>
-              <Switch colorScheme="red" size={'lg'} />
+              <Switch size={'lg'} />
               <Text>disabled</Text>
             </Stack>
           </Flex>

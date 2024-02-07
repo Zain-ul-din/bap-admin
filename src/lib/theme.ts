@@ -1,4 +1,6 @@
 import { extendTheme, defineStyle, defineStyleConfig } from '@chakra-ui/react';
+import { switchAnatomy } from '@chakra-ui/anatomy'
+import { createMultiStyleConfigHelpers } from '@chakra-ui/react'
 
 const fontFamily = `'Lufga', sans-serif`;
 
@@ -29,6 +31,27 @@ const menuBaseStyle = defineStyle({
     }
   },
 });
+
+
+const { definePartsStyle, defineMultiStyleConfig } =
+  createMultiStyleConfigHelpers(switchAnatomy.keys)
+
+const baseStyle = definePartsStyle({
+  thumb: {
+    bg: 'red.500',
+    _checked: {
+      bg: 'gray.50'
+    }
+  },
+  track: {
+    bg: 'gray.100',
+    _checked: {
+      bg: 'red.500',
+    },
+  },
+})
+
+export const switchTheme = defineMultiStyleConfig({ baseStyle })
 
 const components = {
   Input: {
@@ -125,7 +148,8 @@ const components = {
       }
     },
   },
-  Menu: defineStyleConfig({ baseStyle: menuBaseStyle })
+  Menu: defineStyleConfig({ baseStyle: menuBaseStyle }),
+  Switch: switchTheme
 };
 
 const colors = {
@@ -152,6 +176,13 @@ const theme = extendTheme({
   fonts,
   colors,
   components,
+  switchTheme
 });
 
 export default theme;
+
+
+/*
+  Appendix:
+    * Switches: https://chakra-ui.com/docs/components/switch/theming
+*/
