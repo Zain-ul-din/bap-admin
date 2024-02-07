@@ -3,6 +3,9 @@ import OrderIcon from './icons/dashboard/OrderIcon';
 import DataTable from './shared/DataTable';
 import DashboardHeader from './shared/DashboardHeader';
 import { DummyData, StatCardProps, DummyTableData } from '../types/dashboard';
+import UsersIcon from './icons/dashboard/UsersIcon';
+import PeopleSavedIcon from './icons/dashboard/PeopleSavedIcon';
+import EarnedCommissionIcon from './icons/dashboard/EarnedCommissionIcon';
 
 
 const dummy: DummyData[] = [
@@ -14,17 +17,17 @@ const dummy: DummyData[] = [
   {
     items: "120",
     for: "users",
-    icon: <OrderIcon />,
+    icon: <UsersIcon />,
   },
   {
     items: "550",
     for: "People Saved",
-    icon: <OrderIcon />,
+    icon: <PeopleSavedIcon />,
   },
   {
     items: "4.3k lei",
     for: "Earned Commision",
-    icon: <OrderIcon />,
+    icon: <EarnedCommissionIcon />,
   },
 ];
 const table: DummyTableData[] = [
