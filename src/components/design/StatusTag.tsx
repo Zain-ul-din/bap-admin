@@ -1,9 +1,10 @@
 import { Tag, TagProps } from '@chakra-ui/react';
+import {DummyTableData} from "../../types/dashboard"
 
 type Status = 'pending' | 'cancelled' | 'completed';
 
 interface StatusTagProps extends TagProps {
-  status: Status;
+  status: 'pending' | 'cancelled' | 'completed'; 
 }
 
 const defaultProps: Record<Status, TagProps> = {

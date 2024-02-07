@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { IconProps } from '../../../types/IconProps';
 
-export default function OrderIcon({ active, ...rest }: IconProps) {
+export default function OrderIcon({ active,color, ...rest }: IconProps) {
   return (
     <svg width="60" height="60" viewBox="0 0 81 82" fill="none" xmlns="http://www.w3.org/2000/svg" {...rest}>
       <ellipse cx="40.2203" cy="40.549" rx="40.2203" ry="40.549" fill="#EC0039" fill-opacity="0.2" />
