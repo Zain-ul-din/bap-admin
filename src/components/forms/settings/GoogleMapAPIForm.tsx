@@ -1,6 +1,6 @@
 import { Box, Flex, FlexProps, FormControl, FormLabel, Input } from '@chakra-ui/react';
-import PasswordInput from './components/PasswordInput';
-import SaveBtn from './components/SaveBtn';
+import PasswordInput from '../shared/PasswordInput';
+import SaveBtn from '../shared/SaveBtn';
 
 export default function GoogleApiKey({ ...rest }: FlexProps) {
   return (

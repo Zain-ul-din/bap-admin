@@ -1,5 +1,5 @@
 import { Box, Button, Flex, FlexProps, FormControl, FormLabel, Input } from '@chakra-ui/react';
-import PasswordInput from './components/PasswordInput';
+import PasswordInput from '../shared/PasswordInput';
 
 export default function PaymentKeysForm({ ...rest }: FlexProps) {
   return (

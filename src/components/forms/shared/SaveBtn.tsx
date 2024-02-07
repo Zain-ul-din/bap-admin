@@ -1,5 +1,5 @@
 import { Button, ButtonProps } from '@chakra-ui/react';
-import SaveIcon from '../../../icons/SaveIcon';
+import SaveIcon from '../../icons/SaveIcon';
 
 export default function SaveBtn({ ...rest }: ButtonProps) {
   return (

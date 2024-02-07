@@ -3,7 +3,7 @@ import { useDropzone } from 'react-dropzone';
 import { useCallback, useRef, useState } from 'react';
 import { FlexProps } from '@chakra-ui/react';
 import useWindowResize from '../../../hooks/useWindowResize';
-import SaveBtn from './components/SaveBtn';
+import SaveBtn from '../shared/SaveBtn';
 
 export default function GeneralAppInfoForm({ ...rest }: FlexProps) {
   const onDrop = (acceptedFiles: File[]) => {

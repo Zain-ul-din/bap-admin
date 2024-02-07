@@ -1,5 +1,5 @@
 import { Box, Flex, FlexProps, FormControl, FormLabel, Input } from '@chakra-ui/react';
-import SaveBtn from './components/SaveBtn';
+import SaveBtn from '../shared/SaveBtn';
 
 export default function PrivacyPolicyForm({ ...rest }: FlexProps) {
   return (
