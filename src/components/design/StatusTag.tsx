@@ -1,5 +1,4 @@
 import { Tag, TagProps } from '@chakra-ui/react';
-import {DummyTableData} from "../../types/dashboard"
 
 type Status = 'pending' | 'cancelled' | 'completed';
 

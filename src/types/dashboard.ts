@@ -1,7 +1,5 @@
 import { ReactElement } from "react";
 
-let myVariable: number | string | boolean;
-
 export interface DummyData {
     items?: string;
     for?: string;

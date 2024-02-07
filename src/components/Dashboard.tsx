@@ -2,10 +2,7 @@ import { Flex, Grid, GridItem, Heading, Stack, Text, useMediaQuery } from '@chak
 import OrderIcon from './icons/dashboard/OrderIcon';
 import DataTable from './shared/DataTable';
 import DashboardHeader from './shared/DashboardHeader';
-import { ReactElement } from 'react';
 import { DummyData, StatCardProps, DummyTableData } from '../types/dashboard';
-import Users from './icons/dashboard/Users';
-
 
 
 const dummy: DummyData[] = [
