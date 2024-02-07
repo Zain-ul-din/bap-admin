@@ -3,7 +3,7 @@ import { Tag, TagProps } from '@chakra-ui/react';
 type Status = 'pending' | 'cancelled' | 'completed';
 
 interface StatusTagProps extends TagProps {
-  status: 'pending' | 'cancelled' | 'completed'; 
+  status: Status
 }
 
 const defaultProps: Record<Status, TagProps> = {
