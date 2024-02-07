@@ -1,6 +1,6 @@
 import { Flex, Heading, Text } from '@chakra-ui/react';
 import DashboardHeader from './shared/DashboardHeader';
-import { GeneralAppInfoForm } from './forms/settings';
+import { BookingPercentageForm, GeneralAppInfoForm } from './forms/settings';
 
 export default function GeneralSettings() {
   return (
@@ -23,7 +23,7 @@ export default function GeneralSettings() {
 
         <Flex w={'full'} p={4} bg={'white'} flexDir={'column'} gap={6} rounded={'md'}>
           <Heading fontSize={'2xl'}>Booking Percentage</Heading>
-          <GeneralAppInfoForm
+          <BookingPercentageForm
             onSubmit={(e) => {
               e.preventDefault();
               // TODOS: submit form
