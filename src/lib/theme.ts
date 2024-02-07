@@ -58,7 +58,7 @@ const components = {
           color: 'black',
           _hover: {
             bg: 'gray.50',
-            shadow: 'md'
+            shadow: 'sm'
           }
         }
       }

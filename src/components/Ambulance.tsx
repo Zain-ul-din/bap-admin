@@ -13,7 +13,8 @@ import {
 } from '@chakra-ui/react';
 import DashboardHeader from './shared/DashboardHeader';
 import { DeleteIcon, EditIcon } from '@chakra-ui/icons';
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useRef, useState } from 'react';
+import useWindowResize from '../hooks/useWindowResize';
 
 export default function Ambulance() {
   return (
@@ -35,36 +36,24 @@ export default function Ambulance() {
 const Ambulances = () => {
   const cardGridRef = useRef<HTMLDivElement>(null);
   const [gridColTemplate, setGridColTemplate] = useState<number>(3);
-  const [isLargerScreen] = useMediaQuery('(min-width: 1000px)');
   const [isBaseScreen] = useMediaQuery('(max-width: 500px)');
-  const [minCardSize, setMinCardSize] = useState<number>(300);
 
-  useEffect(() => {
-    setMinCardSize(isLargerScreen ? 400 : 300);
-  }, [isLargerScreen]);
+  const handleWindowResize = useCallback(() => {
+    if (!cardGridRef.current) return;
+    const target = cardGridRef.current;
+    const gap = parseInt(getComputedStyle(target).getPropertyValue('grid-row-gap'));
+    const minCardSize = window.matchMedia('(min-width: 1000px)').matches ? 400 : 300;
 
-  useEffect(() => {
-    const handleResize = () => {
-      if (!cardGridRef.current) return;
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      const target = cardGridRef.current;
-      const gap = parseInt(getComputedStyle(target).getPropertyValue('grid-row-gap'));
-      let availableSpace = target.clientWidth - gap,
-        colTemplate = 0;
-      while (availableSpace >= minCardSize) {
-        colTemplate += 1;
-        availableSpace -= minCardSize;
-      }
-      setGridColTemplate(colTemplate);
-    };
+    let availableSpace = target.clientWidth - gap,
+      colTemplate = 0;
+    while (availableSpace >= minCardSize) {
+      colTemplate += 1;
+      availableSpace -= minCardSize;
+    }
+    setGridColTemplate(colTemplate);
+  }, []);
 
-    handleResize();
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, [minCardSize]);
+  useWindowResize(handleWindowResize, []);
 
   return (
     <Grid
