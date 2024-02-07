@@ -1,5 +1,5 @@
 import { Box, Center, Flex, Grid, GridItem, Heading, Image, Text, useMediaQuery } from '@chakra-ui/react';
-import SignInForm from './forms/SignInForm';
+import SignInForm from '../forms/SignInForm';
 import { useEffect, useState } from 'react';
 
 export default function SignIn() {

@@ -1,7 +1,7 @@
 import { Flex, Grid, GridItem, Heading, Stack, Text, useMediaQuery } from '@chakra-ui/react';
-import OrderIcon from './icons/dashboard/OrderIcon';
-import DataTable from './shared/DataTable';
-import DashboardHeader from './shared/DashboardHeader';
+import OrderIcon from '../icons/dashboard/OrderIcon';
+import DataTable from '../shared/DataTable';
+import DashboardHeader from '../shared/DashboardHeader';
 
 export default function Dashboard() {
   return (

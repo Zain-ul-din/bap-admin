@@ -1,6 +1,6 @@
 import { Flex } from '@chakra-ui/react';
-import DashboardHeader from './shared/DashboardHeader';
-import DataTable from './shared/DataTable';
+import DashboardHeader from '../shared/DashboardHeader';
+import DataTable from '../shared/DataTable';
 
 export default function Organization() {
   return (

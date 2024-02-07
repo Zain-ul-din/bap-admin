@@ -142,6 +142,10 @@ const SideBarLink = ({ icon, path, link, active, onRouteChange, ...rest }: SideB
 
   const { pathname } = useLocation();
 
+  const hasActiveChild =
+    hasSubRoutes &&
+    (SUB_ROUTES[path as keyof typeof ROUTES]?.filter((route) => pathname === route.link) || []).length > 0;
+
   useEffect(() => {
     if (!active) onClose();
   }, [pathname, onClose, active]);
@@ -161,8 +165,8 @@ const SideBarLink = ({ icon, path, link, active, onRouteChange, ...rest }: SideB
           colorScheme="red"
           justifyContent={'flex-start'}
           fontWeight={'normal'}
-          bg={active ? 'var(--red-grad)' : 'transparent'}
-          color={active ? 'white' : '#8A92A6'}
+          bg={active || hasActiveChild ? 'var(--red-grad)' : 'transparent'}
+          color={active || hasActiveChild ? 'white' : '#8A92A6'}
           _active={{
             bg: '',
           }}
@@ -187,7 +191,7 @@ const SideBarLink = ({ icon, path, link, active, onRouteChange, ...rest }: SideB
             )
           }
         >
-          {icon && icon({ active })}
+          {icon && icon({ active: active || hasActiveChild })}
           {rest.children}
         </Button>
       </Link>

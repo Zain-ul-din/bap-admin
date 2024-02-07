@@ -5,14 +5,14 @@ import theme from './lib/theme.ts';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { ROUTES } from './lib/constant.ts';
 
-import SignIn from './components/SignIn.tsx';
+import SignIn from './components/pages/SignIn.tsx';
 import RootLayout from './components/layouts/RootLayout.tsx';
-import Dashboard from './components/Dashboard.tsx';
-import Organization from './components/Organization.tsx';
-import Ambulance from './components/Ambulance.tsx';
-import Users from './components/Users.tsx';
-import Booking from './components/Booking.tsx';
-import GeneralSettings from './components/GeneralSettings.tsx';
+import Dashboard from './components/pages/Dashboard.tsx';
+import Organization from './components/pages/Organization.tsx';
+import Ambulance from './components/pages/Ambulance.tsx';
+import Users from './components/pages/Users.tsx';
+import Booking from './components/pages/Booking.tsx';
+import GeneralSettings from './components/pages/GeneralSettings.tsx';
 
 const router = createBrowserRouter([
   {
