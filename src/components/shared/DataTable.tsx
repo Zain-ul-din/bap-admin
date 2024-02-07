@@ -1,13 +1,12 @@
 import { Button, Flex, FlexProps, Heading, Table, TableContainer, Tbody, Td, Th, Thead, Tr } from '@chakra-ui/react';
 import StatusTag from '../design/StatusTag';
-import {DummyTableData} from "../../types/dashboard"
+import { DummyTableData } from '../../types/dashboard';
 interface DataTableProps extends FlexProps {
   heading: string;
-  table?:DummyTableData[]
+  table?: DummyTableData[];
 }
 
-
-export default function DataTable({ heading,table, ...rest }: DataTableProps) {
+export default function DataTable({ heading, table, ...rest }: DataTableProps) {
   return (
     <Flex w={'100%'} bg={'white'} p={2} rounded={'md'} flexDir={'column'} gap={4} shadow={'sm'} {...rest}>
       <Flex w={'100%'} alignItems={'center'} p={2}>
@@ -38,7 +37,7 @@ export default function DataTable({ heading,table, ...rest }: DataTableProps) {
                   <Td>{data?.PICKUPLOCATION}</Td>
                   <Td>{data?.DESTINATIONLOCATION}</Td>
                   <Td>
-                    <StatusTag colorScheme="blue" status={data?.STATUSVALUE|| 'pending'}>
+                    <StatusTag colorScheme="blue" status={data?.STATUSVALUE || 'pending'}>
                       {data?.STATUSData}
                     </StatusTag>
                   </Td>
