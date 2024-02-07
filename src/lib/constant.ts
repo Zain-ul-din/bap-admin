@@ -11,17 +11,19 @@ export const ROUTES = {
 
 export const SUB_ROUTES: Partial<Record<keyof typeof ROUTES, { name: string; link: string }[]>> = {
   Users: [
-    { name: 'Individual', link: '/users' },
+    { name: 'Individual', link: ROUTES['Users'] },
     { name: 'Medical Crop', link: '/medicalcrop' },
   ],
   Ambulance: [
-    { name: 'Types', link: '/ambulance' },
+    { name: 'Types', link: ROUTES['Ambulance'] },
     { name: 'Manufacturers', link: '/individual' },
   ],
   Settings: [
     { name: 'General', link: ROUTES['Settings'] },
-    { name: 'Payment Methods', link: '/settings/payment' },
-    { name: 'API Keys', link: '/settings/api' },
-    { name: 'Policy & Terms', link: '/settings/policy' },
+    { name: 'Payment Methods', link: `${ROUTES['Settings']}/payments` },
+    { name: 'API Keys', link: `${ROUTES['Settings']}/api` },
+    { name: 'Policy & Terms', link: `${ROUTES['Settings']}/policy` },
   ]
 };
+
+

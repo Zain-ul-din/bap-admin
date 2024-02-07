@@ -1,6 +1,6 @@
 import { Flex, Heading, Text } from '@chakra-ui/react';
-import DashboardHeader from '../shared/DashboardHeader';
-import { BookingPercentageForm, GeneralAppInfoForm } from '../forms/settings';
+import DashboardHeader from '../../shared/DashboardHeader';
+import { BookingPercentageForm, GeneralAppInfoForm } from '../../forms/settings';
 
 export default function GeneralSettings() {
   return (

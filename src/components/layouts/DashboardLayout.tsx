@@ -147,8 +147,8 @@ const SideBarLink = ({ icon, path, link, active, onRouteChange, ...rest }: SideB
     (SUB_ROUTES[path as keyof typeof ROUTES]?.filter((route) => pathname === route.link) || []).length > 0;
 
   useEffect(() => {
-    if (!active) onClose();
-  }, [pathname, onClose, active]);
+    if (!active && !hasActiveChild) onClose();
+  }, [pathname, onClose, active, hasActiveChild]);
 
   return (
     <>
