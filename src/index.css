@@ -165,7 +165,7 @@ html {
 }
 
 .sticky-sidebar-close {
-  transform: translateX(-1000px);
+  transform: translateX(-2000px);
 }
 
 .ease-in-out {

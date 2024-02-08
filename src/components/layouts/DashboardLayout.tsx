@@ -205,7 +205,7 @@ const SideBarLink = ({ icon, path, link, active, onRouteChange, ...rest }: SideB
           <Flex flexDir={'column'} pl={5}>
             {SUB_ROUTES[path as keyof typeof ROUTES]?.map((route, idx) => {
               return (
-                <SideBarLink key={idx} link={route.link} active={pathname === route.link}>
+                <SideBarLink key={idx} link={route.link} active={pathname === route.link} onRouteChange={onRouteChange}>
                   {route.name}
                 </SideBarLink>
               );
