@@ -3,7 +3,7 @@ import { IconProps } from '../../types/IconProps';
 export default function ManageIcons({ active, color, ...rest }: IconProps) {
   return (
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" {...rest}>
-      <g id="clarity:administrator-solid" clip-path="url(#clip0_1168_4716)">
+      <g id="clarity:administrator-solid" clipPath="url(#clip0_1168_4716)">
         <path
           id="Vector"
           d="M9.78125 9.53334C11.9904 9.53334 13.7812 7.74248 13.7812 5.53334C13.7812 3.3242 11.9904 1.53334 9.78125 1.53334C7.57211 1.53334 5.78125 3.3242 5.78125 5.53334C5.78125 7.74248 7.57211 9.53334 9.78125 9.53334Z"

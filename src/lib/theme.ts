@@ -84,6 +84,18 @@ const components = {
             shadow: 'sm'
           }
         }
+      },
+      search: {
+        field: {
+          bg: 'rgba(248, 249, 250, 1)',
+        }
+      },
+      chat: {
+        field: {
+          bg: 'rgba(238, 238, 238, 1)',
+          py: 8,
+          rounded: 'none'
+        }
       }
     },
   },
@@ -169,6 +181,13 @@ const colors = {
   gray: {
     50: 'rgba(244, 244, 245, 1)',
     200: '#898989'
+  },
+  orange: {
+    100: '#E33629',
+    800: 'white'
+  },
+  light: {
+    100: 'rgba(217, 217, 217, 0.10)'
   }
 };
 
