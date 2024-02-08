@@ -9,11 +9,13 @@ import SignIn from './components/pages/SignIn.tsx';
 import RootLayout from './components/layouts/RootLayout.tsx';
 import Dashboard from './components/pages/Dashboard.tsx';
 import Organization from './components/pages/Organization.tsx';
-import Ambulance from './components/pages/Ambulance.tsx';
-import Users from './components/pages/Users.tsx';
+import { Ambulance, Manufacturers } from './components/pages/Ambulance';
+import { Users, MedicalCoorp } from './components/pages/Users';
 import Booking from './components/pages/Booking.tsx';
 import { APISettings, GeneralSettings, PaymentSettings, PolicySettings } from './components/pages/Settings';
 import Emergency from './components/pages/Emergency.tsx';
+import ManageAdmins from './components/pages/ManageAdmins.tsx';
+import SupportChat from './components/pages/SupportChat.tsx';
 
 const router = createBrowserRouter([
   {
@@ -31,10 +33,17 @@ const router = createBrowserRouter([
       { path: ROUTES['Booking'], element: <Booking /> },
       { path: ROUTES['Settings'], element: <GeneralSettings /> },
       { path: ROUTES['Emergency contact'], element: <Emergency /> },
+      { path: ROUTES['Manage Admins'], element: <ManageAdmins /> },
+      { path: ROUTES['SupportChat'], element: <SupportChat /> },
+
       // sub routes
-      { path: `${ROUTES['Settings']}/payments`, element: <PaymentSettings /> },
-      { path: `${ROUTES['Settings']}/api`, element: <APISettings /> },
-      { path: `${ROUTES['Settings']}/policy`, element: <PolicySettings /> },
+      { path: ROUTES['User_Medical_Coorp'], element: <MedicalCoorp /> },
+
+      { path: ROUTES['Ambulance_Manufacturers'], element: <Manufacturers /> },
+
+      { path: ROUTES['Settings_Payment'], element: <PaymentSettings /> },
+      { path: ROUTES['Settings_API'], element: <APISettings /> },
+      { path: ROUTES['settings_Policy'], element: <PolicySettings /> },
     ],
   },
 ]);

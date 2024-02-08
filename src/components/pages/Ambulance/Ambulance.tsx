@@ -11,10 +11,10 @@ import {
   GridItemProps,
   useMediaQuery,
 } from '@chakra-ui/react';
-import DashboardHeader from '../shared/DashboardHeader';
+import DashboardHeader from '../../shared/DashboardHeader';
 import { DeleteIcon, EditIcon } from '@chakra-ui/icons';
 import { useCallback, useRef, useState } from 'react';
-import useWindowResize from '../../hooks/useWindowResize';
+import useWindowResize from '../../../hooks/useWindowResize';
 
 export default function Ambulance() {
   return (

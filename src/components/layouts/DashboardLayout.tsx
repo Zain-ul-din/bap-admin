@@ -23,6 +23,7 @@ import FluentSupportIcon from '../icons/FluentSupportIcon';
 import ChatIcon from '../icons/ChatIcon';
 import { ChevronRightIcon, CloseIcon, HamburgerIcon } from '@chakra-ui/icons';
 import { useLocation, Link } from 'react-router-dom';
+import ManageIcons from '../icons/ManageIcon';
 
 export default function DashboardLayout({ children }: { children?: ReactNode }) {
   const [isMdScreen] = useMediaQuery('(max-width: 850px)');
@@ -71,14 +72,16 @@ export default function DashboardLayout({ children }: { children?: ReactNode }) 
               <HamburgerIcon />
             </Button>
           )}
-          <Button colorScheme="blue" p={0} px={2} ml={'auto'} fontWeight={'normal'} fontSize={'sm'}>
-            <ChatIcon
-              style={{
-                marginRight: '4px',
-              }}
-            />
-            Support Chat
-          </Button>
+          <Link to={ROUTES['SupportChat']} style={{ marginLeft: 'auto' }}>
+            <Button colorScheme="blue" p={0} px={2} ml={'auto'} fontWeight={'normal'} fontSize={'sm'}>
+              <ChatIcon
+                style={{
+                  marginRight: '4px',
+                }}
+              />
+              Support Chat
+            </Button>
+          </Link>
         </Flex>
         {children}
       </Flex>
@@ -97,6 +100,7 @@ const dashboardLinks: {
   { text: 'Booking', Icon: SteeringIcon },
   { text: 'Settings', Icon: SettingIcons },
   { text: 'Emergency contact', Icon: FluentSupportIcon },
+  { text: 'Manage Admins', Icon: ManageIcons },
 ];
 
 const Sidebar = ({ onRouteChange }: { onRouteChange?: () => void }) => {
