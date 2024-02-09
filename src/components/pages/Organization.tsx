@@ -4,20 +4,40 @@ import PaginationTable from '../shared/PaginationTable';
 import OrganizationIcon from '../icons/OrganizationIcon';
 import RoutesBreadcrumb from '../shared/RoutesBreadcrumb';
 import StatusTag from '../design/StatusTag';
+import createModal from '../design/createModal';
+import { UpdateStatusForm } from '../forms/Organizations';
+
+// Modals
+const UpdateStatusModal = createModal();
 
 export default function Organization() {
   return (
-    <>
+    <UpdateStatusModal.Provider>
       <DashboardHeader py={5}>Organizations (56)</DashboardHeader>
       <RoutesBreadcrumb path="Organizations/" icon={(props) => <OrganizationIcon {...props} />}></RoutesBreadcrumb>
       <Flex w={'100%'} h={'100%'} flexDir={'column'} p={4} py={0}>
         <OrganizationTable />
       </Flex>
-    </>
+
+      {/* Modals */}
+      <UpdateStatusModalLayout />
+    </UpdateStatusModal.Provider>
   );
 }
 
+const UpdateStatusModalLayout = () => {
+  const { onClose } = UpdateStatusModal.useModalState();
+
+  return (
+    <UpdateStatusModal.Layout title="Update Status">
+      <UpdateStatusForm onCancel={onClose} onSubmit={(e) => e.preventDefault()} />
+    </UpdateStatusModal.Layout>
+  );
+};
+
 const OrganizationTable = () => {
+  const updateStatusModalState = UpdateStatusModal.useModalState();
+
   return (
     <PaginationTable>
       <Thead>
@@ -54,7 +74,8 @@ const OrganizationTable = () => {
                   <MenuButton fontSize={'xl'}>...</MenuButton>
                   <MenuList>
                     <MenuItem>Remove</MenuItem>
-                    <MenuItem>Edit User</MenuItem>
+                    <MenuItem>Edit Org</MenuItem>
+                    <MenuItem onClick={updateStatusModalState.onOpen}>Update Status</MenuItem>
                   </MenuList>
                 </Menu>
               </Td>

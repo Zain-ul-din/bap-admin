@@ -76,7 +76,7 @@ export default function SupportChat() {
           pt={3}
           bg={'white'}
           position={isMdContainer ? 'fixed' : 'initial'}
-          zIndex={999}
+          zIndex={990}
           className={`${isOpen || !isMdContainer ? 'sticky-sidebar-open' : 'sticky-sidebar-close'} ${mounted && 'ease-in-out'}`}
         >
           <Box>

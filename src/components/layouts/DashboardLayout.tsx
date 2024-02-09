@@ -47,7 +47,7 @@ export default function DashboardLayout({ children }: { children?: ReactNode }) 
         gap={'max(2rem, 5%)'}
         position={isMdScreen ? 'fixed' : 'initial'}
         bg={'white'}
-        zIndex={9999}
+        zIndex={999}
         overflowY={'auto'}
         className={`${isOpen || !isMdScreen ? 'sticky-sidebar-open' : 'sticky-sidebar-close'} ${isMounted && 'ease-in-out'}`}
       >

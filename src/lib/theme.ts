@@ -157,6 +157,18 @@ const components = {
           opacity: '0.8',
         },
       },
+      gray: {
+        bg: 'gray.200',
+        color: 'white',
+        fontSize: '1rem',
+        fontWeight: '400',
+        _hover: {
+          opacity: '0.9'
+        },
+        _active: {
+          opacity: '0.8'
+        }
+      },
       white: {
         bg: 'white',
         color: 'black',
