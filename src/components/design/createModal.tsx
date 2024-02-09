@@ -6,6 +6,7 @@ import {
   ModalFooter,
   ModalHeader,
   ModalOverlay,
+  ModalProps,
   useDisclosure,
 } from '@chakra-ui/react';
 import { ReactNode, createContext, useContext } from 'react';
@@ -20,6 +21,7 @@ export interface ModalLayoutProps {
   title?: string;
   children?: ReactNode;
   footer?: ReactNode;
+  modalProps?: Omit<ModalProps, 'isOpen' | 'onClose' | 'children'>;
 }
 
 const createModal = () => {
@@ -44,11 +46,11 @@ const createModal = () => {
     );
   };
 
-  const Layout = ({ title, children, footer }: ModalLayoutProps) => {
+  const Layout = ({ title, modalProps, children, footer }: ModalLayoutProps) => {
     const { isOpen, onClose } = useContext(ModalState);
 
     return (
-      <Modal isOpen={isOpen} onClose={onClose} isCentered>
+      <Modal isCentered {...modalProps} isOpen={isOpen} onClose={onClose}>
         <ModalOverlay bg="blackAlpha.200" backdropFilter="blur(2px)" />
         <ModalContent className="border border-grey-300" mx={2} my={'auto'}>
           <ModalHeader>{title}</ModalHeader>

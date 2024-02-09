@@ -1,7 +1,5 @@
 import {
   Box,
-  Button,
-  ButtonProps,
   Flex,
   Heading,
   Input,
@@ -24,6 +22,7 @@ import AmbulanceIcon from '../icons/AmbulanceIcon';
 import { useState } from 'react';
 import StatusTag from '../design/StatusTag';
 import { SearchIcon } from '@chakra-ui/icons';
+import LabelButton from '../shared/LabelButton';
 
 export default function Booking() {
   const [activeState, setActiveState] = useState<'all' | 'progress' | 'completed'>('all');
@@ -45,15 +44,15 @@ export default function Booking() {
       ></RoutesBreadcrumb>
       <Flex w={'full'} flexDir={'column'} py={0} px={3} gap={3}>
         <Flex py={2} gap={2}>
-          <NavBtn active={activeState == 'all'} onClick={() => setActiveState('all')}>
+          <LabelButton count={20} active={activeState == 'all'} onClick={() => setActiveState('all')}>
             All
-          </NavBtn>
-          <NavBtn active={activeState == 'progress'} onClick={() => setActiveState('progress')}>
+          </LabelButton>
+          <LabelButton active={activeState == 'progress'} onClick={() => setActiveState('progress')}>
             In Progress
-          </NavBtn>
-          <NavBtn active={activeState == 'completed'} onClick={() => setActiveState('completed')}>
+          </LabelButton>
+          <LabelButton active={activeState == 'completed'} onClick={() => setActiveState('completed')}>
             Completed
-          </NavBtn>
+          </LabelButton>
         </Flex>
         <Flex alignItems={'center'}>
           <Heading fontSize={'xl'}>
@@ -125,12 +124,3 @@ export default function Booking() {
     </>
   );
 }
-
-interface NavBtnProps extends ButtonProps {
-  active: boolean;
-}
-const NavBtn = ({ active, children, ...rest }: NavBtnProps) => (
-  <Button variant={active ? 'red' : 'white'} color={active ? 'white' : 'red.500'} {...rest}>
-    {children}
-  </Button>
-);

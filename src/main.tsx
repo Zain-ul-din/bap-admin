@@ -8,7 +8,7 @@ import { ROUTES } from './lib/constant.ts';
 import SignIn from './components/pages/SignIn.tsx';
 import RootLayout from './components/layouts/RootLayout.tsx';
 import Dashboard from './components/pages/Dashboard.tsx';
-import Organization from './components/pages/Organization.tsx';
+import { Organization } from './components/pages/Organization';
 import { Ambulance, Manufacturers } from './components/pages/Ambulance';
 import { Users, MedicalCoorp } from './components/pages/Users';
 import Booking from './components/pages/Booking.tsx';
@@ -16,6 +16,7 @@ import { APISettings, GeneralSettings, PaymentSettings, PolicySettings } from '.
 import Emergency from './components/pages/Emergency.tsx';
 import ManageAdmins from './components/pages/ManageAdmins.tsx';
 import SupportChat from './components/pages/SupportChat.tsx';
+import OrgDetails from './components/pages/Organization/OrgDetails.tsx';
 
 const router = createBrowserRouter([
   {
@@ -28,6 +29,7 @@ const router = createBrowserRouter([
     children: [
       { path: ROUTES['Dashboard'], element: <Dashboard /> },
       { path: ROUTES['Organization'], element: <Organization /> },
+      { path: `${ROUTES['Organization']}/:id`, element: <OrgDetails /> },
       { path: ROUTES['Users'], element: <Users /> },
       { path: ROUTES['Ambulance'], element: <Ambulance /> },
       { path: ROUTES['Booking'], element: <Booking /> },

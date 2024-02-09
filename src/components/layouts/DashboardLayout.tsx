@@ -178,8 +178,8 @@ const SideBarLink = ({ icon, path, link, active, onRouteChange, ...rest }: SideB
 
   // checks if has active route
   useEffect(() => {
-    if (!hasSubRoutes) return;
     const firstActiveRouteSegment = `/${pathname.split('/')[1]}`;
+    if (!hasSubRoutes) return setHasActiveChild(firstActiveRouteSegment === link && (path || '') in ROUTES);
     setHasActiveChild(
       (SUB_ROUTES[path as keyof typeof ROUTES]?.filter((route) => pathname === route.link) || []).length > 0 ||
         firstActiveRouteSegment === link

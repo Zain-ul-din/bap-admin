@@ -1,11 +1,13 @@
 import { Checkbox, Flex, Menu, MenuButton, MenuItem, MenuList, Tbody, Td, Th, Thead, Tr } from '@chakra-ui/react';
-import DashboardHeader from '../shared/DashboardHeader';
-import PaginationTable from '../shared/PaginationTable';
-import OrganizationIcon from '../icons/OrganizationIcon';
-import RoutesBreadcrumb from '../shared/RoutesBreadcrumb';
-import StatusTag from '../design/StatusTag';
-import createModal from '../design/createModal';
-import { UpdateStatusForm } from '../forms/Organizations';
+import DashboardHeader from '../../shared/DashboardHeader';
+import PaginationTable from '../../shared/PaginationTable';
+import OrganizationIcon from '../../icons/OrganizationIcon';
+import RoutesBreadcrumb from '../../shared/RoutesBreadcrumb';
+import StatusTag from '../../design/StatusTag';
+import createModal from '../../design/createModal';
+import { UpdateStatusForm } from '../../forms/Organizations';
+import { Link } from 'react-router-dom';
+import { ROUTES } from '../../../lib/constant';
 
 // Modals
 const UpdateStatusModal = createModal();
@@ -61,7 +63,13 @@ const OrganizationTable = () => {
               <Td>
                 <Checkbox />
               </Td>
-              <Td>Kuhic, Hane and Funk</Td>
+              <Td
+                _hover={{
+                  textDecoration: 'underline',
+                }}
+              >
+                <Link to={`${ROUTES['Organization']}/foo`}>Kuhic, Hane and Funk</Link>
+              </Td>
               <Td>230-485-5534</Td>
               <Td>September 9, 2013</Td>
               <Td>53609</Td>
