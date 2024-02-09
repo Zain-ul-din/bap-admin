@@ -171,14 +171,20 @@ interface SideBarLinkProps extends ButtonProps {
 }
 
 const SideBarLink = ({ icon, path, link, active, onRouteChange, ...rest }: SideBarLinkProps) => {
-  const hasSubRoutes = (path || '') in SUB_ROUTES;
   const { isOpen, onToggle, onClose } = useDisclosure();
-
+  const hasSubRoutes = (path || '') in SUB_ROUTES;
   const { pathname } = useLocation();
+  const [hasActiveChild, setHasActiveChild] = useState<boolean>(false);
 
-  const hasActiveChild =
-    hasSubRoutes &&
-    (SUB_ROUTES[path as keyof typeof ROUTES]?.filter((route) => pathname === route.link) || []).length > 0;
+  // checks if has active route
+  useEffect(() => {
+    if (!hasSubRoutes) return;
+    const firstActiveRouteSegment = `/${pathname.split('/')[1]}`;
+    setHasActiveChild(
+      (SUB_ROUTES[path as keyof typeof ROUTES]?.filter((route) => pathname === route.link) || []).length > 0 ||
+        firstActiveRouteSegment === link
+    );
+  }, [hasSubRoutes, pathname, path, link]);
 
   useEffect(() => {
     if (!active && !hasActiveChild) onClose();
