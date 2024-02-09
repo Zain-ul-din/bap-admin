@@ -47,6 +47,9 @@ export default function PaginationTable({ children, ...rest }: PaginationTablePr
               <Button size={'sm'} variant={'red'}>
                 {'1'}
               </Button>
+              <Button size={'sm'} variant={'red'}>
+                {'2'}
+              </Button>
               <Button
                 size={'sm'}
                 colorScheme="gray"
