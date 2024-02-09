@@ -226,7 +226,7 @@ const SideBarLink = ({ icon, path, link, active, onRouteChange, ...rest }: SideB
                 top={'30%'}
                 __css={{
                   transform: isOpen ? 'rotate(90deg)' : undefined,
-                  transition: 'transform 0.1s',
+                  transition: 'transform 0.5',
                 }}
               />
             ) : (
@@ -240,7 +240,7 @@ const SideBarLink = ({ icon, path, link, active, onRouteChange, ...rest }: SideB
       </LinkWrapper>
 
       {hasSubRoutes && (
-        <Collapse in={isOpen} transition={{ enter: { duration: 0.5 } }} animateOpacity>
+        <Collapse in={isOpen} transition={{ enter: { duration: 0.2 } }} animateOpacity>
           <Flex flexDir={'column'} pl={5}>
             {SUB_ROUTES[path as keyof typeof ROUTES]?.map((route, idx) => {
               return (
