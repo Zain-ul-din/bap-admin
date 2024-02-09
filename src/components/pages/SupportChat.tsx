@@ -116,7 +116,7 @@ const DUMMY_MESSAGES = [
   { msg: 'Hello! Where are you brother? ', time: '15:42', sender: 'Driver' },
   { msg: 'I’m just few blocks away from your Position.Please hurry', time: '16:42', sender: 'Admin' },
   { msg: 'Ok I’m coming', time: '16:45', sender: 'Driver' },
-  { msg: 'Thanks, We are waiting . It’s an emergency.', time: '16:46', sender: 'Driver' },
+  { msg: 'Thanks, We are waiting . It’s an emergency.', time: '16:46', sender: 'Admin' },
 ];
 
 const Chat = () => {

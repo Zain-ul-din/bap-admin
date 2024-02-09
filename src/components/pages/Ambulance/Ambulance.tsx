@@ -15,19 +15,30 @@ import DashboardHeader from '../../shared/DashboardHeader';
 import { DeleteIcon, EditIcon } from '@chakra-ui/icons';
 import { useCallback, useRef, useState } from 'react';
 import useWindowResize from '../../../hooks/useWindowResize';
+import RoutesBreadcrumb from '../../shared/RoutesBreadcrumb';
+import AmbulanceIcon from '../../icons/AmbulanceIcon';
 
 export default function Ambulance() {
   return (
     <>
       <DashboardHeader>Ambulance Types</DashboardHeader>
-      <Flex w={'full'} p={3} alignItems={'center'}>
-        <Text fontSize={'sm'} color={'gray.200'}>
-          Ambulance Types
-        </Text>
-        <Button colorScheme="red" fontWeight={'normal'} size={'md'} ml={'auto'}>
+      <RoutesBreadcrumb
+        path="Ambulance Type"
+        icon={(props) => (
+          <AmbulanceIcon
+            color="red"
+            style={{
+              transform: 'translateY(-2px)',
+            }}
+            {...props}
+          />
+        )}
+      >
+        <Button colorScheme="red" fontWeight={'normal'} size={'sm'} ml={'auto'}>
           + Add New
         </Button>
-      </Flex>
+      </RoutesBreadcrumb>
+      <Flex w={'full'} p={3} py={0} alignItems={'center'}></Flex>
       <Ambulances />
     </>
   );

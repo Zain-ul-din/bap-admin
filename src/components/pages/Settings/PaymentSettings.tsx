@@ -1,17 +1,15 @@
 import { Flex, Heading, Stack, Text, Link, Switch } from '@chakra-ui/react';
 import DashboardHeader from '../../shared/DashboardHeader';
 import { PaymentKeysForm } from '../../forms/settings';
+import RoutesBreadcrumb from '../../shared/RoutesBreadcrumb';
+import SettingIcons from '../../icons/SettingsIcon';
 
 export default function PaymentSettings() {
   return (
     <>
       <DashboardHeader>Payment Methods</DashboardHeader>
-
-      <Flex w={'full'} p={2} flexDir={'column'} gap={3}>
-        <Text color={'gray.200'} fontWeight={'light'} ml={3} my={2}>
-          Payment Methods
-        </Text>
-
+      <RoutesBreadcrumb path={'Payment Methods'} icon={(props) => <SettingIcons {...props} />}></RoutesBreadcrumb>
+      <Flex w={'full'} p={2} flexDir={'column'} gap={3} py={0}>
         <Flex w={'full'} p={4} bg={'white'} flexDir={'column'} gap={6} rounded={'md'}>
           <Flex alignItems={'center'}>
             <Stack>

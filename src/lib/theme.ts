@@ -103,14 +103,28 @@ const components = {
     variants: {
       simple: {
         th: {
+          padding: '1rem',
+          color: '#343A40',
+          borderBottom: '2px solid rgba(223, 223, 223, 1)'
+        },
+        td: {
+          whiteSpace: 'nowrap',
+          color: '#6C757D',
+          py: 3
+        },
+      },
+      'simple-center': {
+        th: {
           textAlign: 'center',
           padding: '1rem',
           color: '#343A40',
+          borderBottom: '2px solid rgba(223, 223, 223, 1)'
         },
         td: {
           textAlign: 'center',
           whiteSpace: 'nowrap',
           color: '#6C757D',
+          py: 3
         },
       },
       pagination: {
