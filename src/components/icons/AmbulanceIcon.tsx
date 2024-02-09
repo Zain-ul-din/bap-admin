@@ -1,7 +1,6 @@
 import { IconProps } from '../../types/IconProps';
 
 export default function AmbulanceIcon({ active, color, ...rest }: IconProps) {
-  console.log(color);
   return (
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" {...rest}>
       <g id="emojione-monotone:ambulance" clipPath="url(#clip0_909_6324)">
