@@ -1,13 +1,16 @@
 import {
+  Avatar,
   Box,
   Button,
   ButtonProps,
   Collapse,
   Flex,
   Image,
+  Stack,
   useDisclosure,
   useMediaQuery,
   useTimeout,
+  Text,
 } from '@chakra-ui/react';
 import { ReactNode, useEffect, useState } from 'react';
 import OrganizationIcon from '../icons/OrganizationIcon';
@@ -21,7 +24,7 @@ import SettingIcons from '../icons/SettingsIcon';
 import CategoryIcon from '../icons/CategoryIcon';
 import FluentSupportIcon from '../icons/FluentSupportIcon';
 import ChatIcon from '../icons/ChatIcon';
-import { ChevronRightIcon, CloseIcon, HamburgerIcon } from '@chakra-ui/icons';
+import { ChevronDownIcon, ChevronRightIcon, CloseIcon, HamburgerIcon } from '@chakra-ui/icons';
 import { useLocation, Link } from 'react-router-dom';
 import ManageIcons from '../icons/ManageIcon';
 
@@ -66,7 +69,7 @@ export default function DashboardLayout({ children }: { children?: ReactNode }) 
         overflowY={'auto'}
       >
         {/* top header */}
-        <Flex w={'100%'} p={'1rem'} py={2}>
+        <Flex w={'100%'} p={'1rem'} py={2} gap={2} alignItems={'center'}>
           {isMdScreen && (
             <Button colorScheme="red" onClick={() => setIsOpen(true)}>
               <HamburgerIcon />
@@ -79,9 +82,35 @@ export default function DashboardLayout({ children }: { children?: ReactNode }) 
                   marginRight: '4px',
                 }}
               />
-              Support Chat
+              {!isMdScreen && 'Support Chat'}
             </Button>
           </Link>
+
+          <Flex alignItems={'center'}>
+            <Avatar size={'sm'} />
+            <Button size={'sm'} variant={'unstyled'} color={'gray.500'}>
+              <ChevronDownIcon fontWeight={'bold'} fontSize={'lg'} />
+            </Button>
+          </Flex>
+
+          <Flex w={'1px'} h={'25px'} bg={'gray.300'}></Flex>
+
+          <Flex alignItems={'center'} gap={1}>
+            <Avatar size={'sm'} />
+            {!isMdScreen && (
+              <Stack spacing={'-6px'}>
+                <Text fontWeight={'normal'} fontSize={'md'}>
+                  Bursa De Ambulante
+                </Text>
+                <Text color={'gray.500'} fontSize={'xs'}>
+                  Admin
+                </Text>
+              </Stack>
+            )}
+            <Button size={'sm'} variant={'unstyled'} color={'gray.500'}>
+              <ChevronDownIcon fontWeight={'bold'} fontSize={'lg'} />
+            </Button>
+          </Flex>
         </Flex>
         {children}
       </Flex>
