@@ -27,6 +27,7 @@ import ChatIcon from '../icons/ChatIcon';
 import { ChevronDownIcon, ChevronRightIcon, CloseIcon, HamburgerIcon } from '@chakra-ui/icons';
 import { useLocation, Link } from 'react-router-dom';
 import ManageIcons from '../icons/ManageIcon';
+import LinkWrapper from '../shared/LinkWrapper';
 
 export default function DashboardLayout({ children }: { children?: ReactNode }) {
   const [isMdScreen] = useMediaQuery('(max-width: 850px)');
@@ -185,11 +186,12 @@ const SideBarLink = ({ icon, path, link, active, onRouteChange, ...rest }: SideB
 
   return (
     <>
-      <Link
+      <LinkWrapper
         to={link}
         onClick={() => {
           onRouteChange && onRouteChange();
         }}
+        disabled={hasSubRoutes}
       >
         <Button
           onClick={onToggle}
@@ -216,7 +218,7 @@ const SideBarLink = ({ icon, path, link, active, onRouteChange, ...rest }: SideB
                 top={'30%'}
                 __css={{
                   transform: isOpen ? 'rotate(90deg)' : undefined,
-                  transition: 'transform 0.3s',
+                  transition: 'transform 0.1s',
                 }}
               />
             ) : (
@@ -227,7 +229,7 @@ const SideBarLink = ({ icon, path, link, active, onRouteChange, ...rest }: SideB
           {icon && icon({ active: active || hasActiveChild })}
           {rest.children}
         </Button>
-      </Link>
+      </LinkWrapper>
 
       {hasSubRoutes && (
         <Collapse in={isOpen} transition={{ enter: { duration: 0.5 } }} animateOpacity>
