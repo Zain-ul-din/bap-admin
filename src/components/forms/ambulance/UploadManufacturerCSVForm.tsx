@@ -4,10 +4,10 @@ import { useDropzone } from 'react-dropzone';
 
 export default function UploadManufacturerCSVForm({ ...rest }: FlexProps) {
   const onDrop = (acceptedFiles: File[]) => {
-    setSelectedLogo(acceptedFiles[0].name);
+    setSelectedFile(acceptedFiles[0].name);
   };
 
-  const [selectedLogo, setSelectedLogo] = useState<string | null>(null);
+  const [selectedFile, setSelectedFile] = useState<string | null>(null);
   const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop });
 
   return (
@@ -25,8 +25,8 @@ export default function UploadManufacturerCSVForm({ ...rest }: FlexProps) {
       >
         <input {...getInputProps()} />
 
-        {selectedLogo ? (
-          <Text>{selectedLogo}</Text>
+        {selectedFile ? (
+          <Text>{selectedFile}</Text>
         ) : (
           <Stack textAlign={'center'}>
             <Text>Drag transparent logo here</Text>

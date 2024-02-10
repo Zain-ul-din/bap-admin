@@ -13,6 +13,10 @@ export default function RoutesBreadcrumb({ path, icon, children, ...rest }: Rout
       {icon({
         width: '16px',
         height: '16px',
+        style: {
+          minWidth: '16px',
+          minHeight: '16px',
+        },
       })}
       <Text color={'gray.500'} fontSize={'sm'} fontWeight={'light'}>
         {path}

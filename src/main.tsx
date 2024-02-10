@@ -18,6 +18,7 @@ import ManageAdmins from './components/pages/ManageAdmins.tsx';
 import SupportChat from './components/pages/SupportChat.tsx';
 import OrgDetails from './components/pages/Organization/OrgDetails.tsx';
 import BookingDetails from './components/pages/Booking/BookingDetails.tsx';
+import { BookMapTracking, BookingChat } from './components/pages/Booking/index.ts';
 
 const router = createBrowserRouter([
   {
@@ -42,6 +43,8 @@ const router = createBrowserRouter([
       { path: `${ROUTES['Organization']}/:id`, element: <OrgDetails /> },
 
       { path: `${ROUTES['Booking']}/:id`, element: <BookingDetails /> },
+      { path: `${ROUTES['Booking_Chat']}/:id`, element: <BookingChat /> },
+      { path: `${ROUTES['Booking_Tracking']}/:id`, element: <BookMapTracking /> },
 
       { path: ROUTES['User_Medical_Coorp'], element: <MedicalCoorp /> },
 

@@ -190,7 +190,7 @@ const components = {
   Switch: switchTheme
 };
 
-const colors = {
+export const colors = {
   blue: {
     500: 'rgba(50, 166, 249, 1)',
   },

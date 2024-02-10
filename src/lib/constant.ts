@@ -16,6 +16,9 @@ export const ROUTES = {
   
   'User_Medical_Coorp': '',
 
+  'Booking_Chat': '',
+  'Booking_Tracking': '',
+
   'Settings_Payment': '',
   'Settings_API': '',
   'settings_Policy': ''
@@ -26,6 +29,9 @@ ROUTES['Ambulance_AddNewType'] = `${ROUTES['Ambulance']}/new-type`
 ROUTES['Ambulance_AddNewManufacturer']= `${ROUTES['Ambulance']}/new-manufacturer`
 
 ROUTES['User_Medical_Coorp'] = `${ROUTES['Users']}/medicalcrop`
+
+ROUTES['Booking_Chat'] = `${ROUTES['Booking']}/chat`
+ROUTES['Booking_Tracking'] = `${ROUTES['Booking']}/map-tracking`
 
 ROUTES['Settings_Payment'] = `${ROUTES['Settings']}/payments`
 ROUTES['Settings_API'] = `${ROUTES['Settings']}/api`
