@@ -16,6 +16,8 @@ import DashboardHeader from '../../shared/DashboardHeader';
 import PaginationTable from '../../shared/PaginationTable';
 import RoutesBreadcrumb from '../../shared/RoutesBreadcrumb';
 import AmbulanceIcon from '../../icons/AmbulanceIcon';
+import { Link } from 'react-router-dom';
+import { ROUTES } from '../../../lib/constant';
 
 export default function Manufacturers() {
   return (
@@ -33,9 +35,16 @@ export default function Manufacturers() {
           />
         )}
       >
-        <Button colorScheme="red" fontWeight={'normal'} size={'sm'} ml={'auto'}>
-          + Add New
-        </Button>
+        <Link
+          to={ROUTES['Ambulance_AddNewManufacturer']}
+          style={{
+            marginLeft: 'auto',
+          }}
+        >
+          <Button colorScheme="red" fontWeight={'normal'} size={'sm'}>
+            + Add New
+          </Button>
+        </Link>
       </RoutesBreadcrumb>
       <Flex w={'full'} flexDir={'column'} p={2}>
         <PaginationTable>

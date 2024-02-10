@@ -11,6 +11,8 @@ export const ROUTES = {
   SupportChat: '/support-chat',
   // sub routes
   'Ambulance_Manufacturers': '',
+  'Ambulance_AddNewType': '',
+  'Ambulance_AddNewManufacturer': '',
   
   'User_Medical_Coorp': '',
 
@@ -20,6 +22,8 @@ export const ROUTES = {
 };
 
 ROUTES['Ambulance_Manufacturers'] = `${ROUTES['Ambulance']}/manufacturers`
+ROUTES['Ambulance_AddNewType'] = `${ROUTES['Ambulance']}/new-type`
+ROUTES['Ambulance_AddNewManufacturer']= `${ROUTES['Ambulance']}/new-manufacturer`
 
 ROUTES['User_Medical_Coorp'] = `${ROUTES['Users']}/medicalcrop`
 

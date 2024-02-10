@@ -15,14 +15,16 @@ import {
   Thead,
   Tr,
 } from '@chakra-ui/react';
-import DashboardHeader from '../shared/DashboardHeader';
-import PaginationTable from '../shared/PaginationTable';
-import RoutesBreadcrumb from '../shared/RoutesBreadcrumb';
-import AmbulanceIcon from '../icons/AmbulanceIcon';
+import DashboardHeader from '../../shared/DashboardHeader';
+import PaginationTable from '../../shared/PaginationTable';
+import RoutesBreadcrumb from '../../shared/RoutesBreadcrumb';
+import AmbulanceIcon from '../../icons/AmbulanceIcon';
 import { useState } from 'react';
-import StatusTag from '../design/StatusTag';
+import StatusTag from '../../design/StatusTag';
 import { SearchIcon } from '@chakra-ui/icons';
-import LabelButton from '../shared/LabelButton';
+import LabelButton from '../../shared/LabelButton';
+import { Link } from 'react-router-dom';
+import { ROUTES } from '../../../lib/constant';
 
 export default function Booking() {
   const [activeState, setActiveState] = useState<'all' | 'progress' | 'completed'>('all');
@@ -110,8 +112,11 @@ export default function Booking() {
                     <Menu>
                       <MenuButton fontSize={'xl'}>...</MenuButton>
                       <MenuList>
-                        <MenuItem>Remove</MenuItem>
-                        <MenuItem>Edit User</MenuItem>
+                        <Link to={`${ROUTES['Booking']}/foo`}>
+                          <MenuItem>View Details</MenuItem>
+                        </Link>
+                        <MenuItem>View Chat</MenuItem>
+                        <MenuItem>Delete</MenuItem>
                       </MenuList>
                     </Menu>
                   </Td>

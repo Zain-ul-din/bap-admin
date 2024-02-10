@@ -17,6 +17,8 @@ import { useCallback, useRef, useState } from 'react';
 import useWindowResize from '../../../hooks/useWindowResize';
 import RoutesBreadcrumb from '../../shared/RoutesBreadcrumb';
 import AmbulanceIcon from '../../icons/AmbulanceIcon';
+import { Link } from 'react-router-dom';
+import { ROUTES } from '../../../lib/constant';
 
 export default function Ambulance() {
   return (
@@ -34,9 +36,16 @@ export default function Ambulance() {
           />
         )}
       >
-        <Button colorScheme="red" fontWeight={'normal'} size={'sm'} ml={'auto'}>
-          + Add New
-        </Button>
+        <Link
+          to={ROUTES['Ambulance_AddNewType']}
+          style={{
+            marginLeft: 'auto',
+          }}
+        >
+          <Button colorScheme="red" fontWeight={'normal'} size={'sm'}>
+            + Add New
+          </Button>
+        </Link>
       </RoutesBreadcrumb>
       <Flex w={'full'} p={3} py={0} alignItems={'center'}></Flex>
       <Ambulances />
