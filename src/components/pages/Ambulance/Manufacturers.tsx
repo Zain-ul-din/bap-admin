@@ -10,7 +10,12 @@ import {
   Td,
   Th,
   Thead,
+  Text,
   Tr,
+  Box,
+  InputGroup,
+  InputLeftElement,
+  Input,
 } from '@chakra-ui/react';
 import DashboardHeader from '../../shared/DashboardHeader';
 import PaginationTable from '../../shared/PaginationTable';
@@ -18,6 +23,8 @@ import RoutesBreadcrumb from '../../shared/RoutesBreadcrumb';
 import AmbulanceIcon from '../../icons/AmbulanceIcon';
 import { Link } from 'react-router-dom';
 import { ROUTES } from '../../../lib/constant';
+import { SearchIcon } from '@chakra-ui/icons';
+import FilterBtn from '../../shared/FilterBtn';
 
 export default function Manufacturers() {
   return (
@@ -46,7 +53,19 @@ export default function Manufacturers() {
           </Button>
         </Link>
       </RoutesBreadcrumb>
-      <Flex w={'full'} flexDir={'column'} p={2}>
+      <Flex w={'full'} flexDir={'column'} p={2} bg={'white'}>
+        <Flex alignItems={'center'} gap={4} mx={2}>
+          <Text color={'gray.500'}>Manufacturers</Text>
+          <Box>
+            <InputGroup>
+              <InputLeftElement top={'-3px'}>
+                <SearchIcon fontSize={'xs'} color={'gray.500'} />
+              </InputLeftElement>
+              <Input variant={'search'} fontSize={'sm'} size={'sm'} placeholder="search..." />
+            </InputGroup>
+          </Box>
+          <FilterBtn ml={'auto'} />
+        </Flex>
         <PaginationTable>
           <Thead>
             <Tr>

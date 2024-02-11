@@ -19,6 +19,7 @@ import {
   Avatar,
 } from '@chakra-ui/react';
 import PaginationTable from '../../../shared/PaginationTable';
+import FilterBtn from '../../../shared/FilterBtn';
 
 // TODO: move to separate file if needed
 const AllDriversTable = () => {
@@ -34,6 +35,7 @@ const AllDriversTable = () => {
             <Input variant={'search'} fontSize={'sm'} size={'sm'} placeholder="search..." />
           </InputGroup>
         </Box>
+        <FilterBtn ml={'auto'} />
       </Flex>
 
       <PaginationTable>

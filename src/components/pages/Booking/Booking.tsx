@@ -25,6 +25,7 @@ import { SearchIcon } from '@chakra-ui/icons';
 import LabelButton from '../../shared/LabelButton';
 import { Link } from 'react-router-dom';
 import { ROUTES } from '../../../lib/constant';
+import FilterBtn from '../../shared/FilterBtn';
 
 export default function Booking() {
   const [activeState, setActiveState] = useState<'all' | 'progress' | 'completed'>('all');
@@ -43,7 +44,9 @@ export default function Booking() {
             {...props}
           />
         )}
-      ></RoutesBreadcrumb>
+      >
+        <FilterBtn ml={'auto'} />
+      </RoutesBreadcrumb>
       <Flex w={'full'} flexDir={'column'} py={0} px={3} gap={3}>
         <Flex py={2} gap={2}>
           <LabelButton count={20} active={activeState == 'all'} onClick={() => setActiveState('all')}>

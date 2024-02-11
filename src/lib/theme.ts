@@ -183,6 +183,18 @@ const components = {
           opacity: '0.9',
           shadow: 'lg'
         }
+      },
+      greenish: {
+        bg: '#4CE5B1',
+        color: 'black',
+        fontSize: '1rem',
+        fontWeight: '400',
+        _hover: {
+          opacity: 0.9
+        },
+        _active: {
+          opacity: 0.8
+        }
       }
     },
   },

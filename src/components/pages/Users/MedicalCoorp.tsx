@@ -16,15 +16,15 @@ import DashboardHeader from '../../shared/DashboardHeader';
 import PaginationTable from '../../shared/PaginationTable';
 import RoutesBreadcrumb from '../../shared/RoutesBreadcrumb';
 import OrganizationIcon from '../../icons/OrganizationIcon';
+import FilterBtn from '../../shared/FilterBtn';
 
 export default function MedicalCoorp() {
   return (
     <>
       <DashboardHeader>Medical Coorps</DashboardHeader>
-      <RoutesBreadcrumb
-        path="Users > Medical Coorps"
-        icon={(props) => <OrganizationIcon {...props} />}
-      ></RoutesBreadcrumb>
+      <RoutesBreadcrumb path="Users > Medical Coorps" icon={(props) => <OrganizationIcon {...props} />}>
+        <FilterBtn ml={'auto'} />
+      </RoutesBreadcrumb>
       <Flex w={'full'} flexDir={'column'} p={2} py={0}>
         <PaginationTable>
           <Thead>

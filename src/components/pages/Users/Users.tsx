@@ -16,12 +16,15 @@ import DashboardHeader from '../../shared/DashboardHeader';
 import PaginationTable from '../../shared/PaginationTable';
 import RoutesBreadcrumb from '../../shared/RoutesBreadcrumb';
 import UsersIcon from '../../icons/UserIcon';
+import FilterBtn from '../../shared/FilterBtn';
 
 export default function Users() {
   return (
     <>
       <DashboardHeader>Individual Users</DashboardHeader>
-      <RoutesBreadcrumb path="Users > Individual" icon={(props) => <UsersIcon {...props} />}></RoutesBreadcrumb>
+      <RoutesBreadcrumb path="Users > Individual" icon={(props) => <UsersIcon {...props} />}>
+        <FilterBtn ml={'auto'} />
+      </RoutesBreadcrumb>
       <Flex w={'full'} flexDir={'column'} p={2} py={0}>
         <PaginationTable>
           <Thead>

@@ -20,14 +20,24 @@ export default function SignInForm() {
           type="email"
           placeholder="Username"
           variant={'outline'}
+          ringColor={'black'}
           outline={'none'}
+          borderColor={'white'}
           size={'md'}
           required
         />
       </FormControl>
       <FormControl color={'white'}>
         <FormLabel fontWeight={'light'}>Password</FormLabel>
-        <Input name="password" type="password" placeholder="Password" variant={'outline'} size={'md'} required />
+        <Input
+          name="password"
+          type="password"
+          placeholder="Password"
+          variant={'outline'}
+          size={'md'}
+          borderColor={'white'}
+          required
+        />
       </FormControl>
 
       <FormControl color={'white'} display={'flex'} alignItems={'center'} fontWeight={'light'}>

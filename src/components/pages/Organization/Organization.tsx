@@ -8,6 +8,7 @@ import createModal from '../../design/createModal';
 import { UpdateStatusForm } from '../../forms/Organizations';
 import { Link } from 'react-router-dom';
 import { ROUTES } from '../../../lib/constant';
+import FilterBtn from '../../shared/FilterBtn';
 
 // Modals
 const UpdateStatusModal = createModal();
@@ -16,7 +17,9 @@ export default function Organization() {
   return (
     <UpdateStatusModal.Provider>
       <DashboardHeader py={5}>Organizations (56)</DashboardHeader>
-      <RoutesBreadcrumb path="Organizations/" icon={(props) => <OrganizationIcon {...props} />}></RoutesBreadcrumb>
+      <RoutesBreadcrumb path="Organizations/" icon={(props) => <OrganizationIcon {...props} />}>
+        <FilterBtn ml={'auto'} />
+      </RoutesBreadcrumb>
       <Flex w={'100%'} h={'100%'} flexDir={'column'} p={4} py={0}>
         <OrganizationTable />
       </Flex>
