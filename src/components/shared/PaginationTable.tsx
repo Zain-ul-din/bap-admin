@@ -26,7 +26,7 @@ export default function PaginationTable({ children, ...rest }: PaginationTablePr
           <Flex alignItems={'center'} ml={'auto'} gap={2}>
             <Flex alignItems={'center'} gap={2}>
               <Text color={'gray.500'}>Display</Text>
-              <NumberInput size="sm" maxW={20} defaultValue={10} min={1} rounded={'md'}>
+              <NumberInput size="sm" maxW={20} minW={20} defaultValue={10} min={1} rounded={'md'}>
                 <NumberInputField />
                 <NumberInputStepper>
                   <NumberIncrementStepper />
