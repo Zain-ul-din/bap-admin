@@ -41,7 +41,6 @@ export default function BookingDetails() {
   const onWindowResize = useCallback(() => {
     if (!containerRef.current) return;
     const containerWidth = containerRef.current.clientWidth;
-    console.log(containerWidth);
     if (containerWidth <= 750) setGridProps({ colSpan: 1, leftColSpan: 1, rightColSpan: 1 });
     else if (containerWidth <= 1000) setGridProps({ colSpan: 4, leftColSpan: 2, rightColSpan: 2 });
     else setGridProps(defaultGridProps);
@@ -88,7 +87,7 @@ export default function BookingDetails() {
           </HStack>
         </RoutesBreadcrumb>
 
-        <Flex flexDir={'column'} gap={2} p={4} pt={0} maxW={'1200px'} m={'0 auto'} ref={containerRef}>
+        <Flex flexDir={'column'} gap={2} p={isMdScreen ? 1 : 4} pt={0} maxW={'1200px'} m={'0 auto'} ref={containerRef}>
           <Grid
             mt={2}
             gridTemplateColumns={`repeat(${gridProps.colSpan}, 1fr)`}
