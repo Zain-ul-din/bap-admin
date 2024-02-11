@@ -11,6 +11,7 @@ import {
   useMediaQuery,
   useTimeout,
   Text,
+  HStack,
 } from '@chakra-ui/react';
 import { ReactNode, useEffect, useState } from 'react';
 import OrganizationIcon from '../icons/OrganizationIcon';
@@ -70,48 +71,59 @@ export default function DashboardLayout({ children }: { children?: ReactNode }) 
         overflowY={'auto'}
       >
         {/* top header */}
-        <Flex w={'100%'} p={'1rem'} py={2} gap={2} alignItems={'center'}>
+        <Flex w={'100%'} px={isMdScreen ? '0.2rem' : '1rem'} py={2} gap={2} alignItems={'center'}>
           {isMdScreen && (
-            <Button colorScheme="red" onClick={() => setIsOpen(true)}>
+            <Button colorScheme="red" onClick={() => setIsOpen(true)} size={'sm'}>
               <HamburgerIcon />
             </Button>
           )}
           <Link to={ROUTES['SupportChat']} style={{ marginLeft: 'auto' }}>
-            <Button colorScheme="blue" p={0} px={2} ml={'auto'} fontWeight={'normal'} fontSize={'sm'}>
+            <Button
+              colorScheme="blue"
+              p={0}
+              px={2}
+              ml={'auto'}
+              fontWeight={'normal'}
+              fontSize={isMdScreen ? 'x-small' : 'sm'}
+              size={isMdScreen ? 'sm' : 'md'}
+            >
               <ChatIcon
+                width={isMdScreen ? '15' : '25'}
+                height={isMdScreen ? '15' : '25'}
                 style={{
                   marginRight: '4px',
                 }}
               />
-              {!isMdScreen && 'Support Chat'}
+              Support Chat
             </Button>
           </Link>
 
           <Flex alignItems={'center'}>
-            <Avatar size={'sm'} />
-            <Button size={'sm'} variant={'unstyled'} color={'gray.500'}>
+            <Avatar size={isMdScreen ? 'xs' : 'sm'} />
+            <Button size={'xs'} p={0} m={0} variant={'unstyled'} color={'gray.500'}>
               <ChevronDownIcon fontWeight={'bold'} fontSize={'lg'} />
             </Button>
           </Flex>
+          <HStack spacing={3}>
+            <Flex h={'15px'} w={'1px'} bg={'gray.500'}></Flex>
 
-          <Flex w={'1px'} h={'25px'} bg={'gray.300'}></Flex>
-
-          <Flex alignItems={'center'} gap={1}>
-            <Avatar size={'sm'} />
-            {!isMdScreen && (
-              <Stack spacing={'-6px'}>
-                <Text fontWeight={'normal'} fontSize={'md'}>
-                  Bursa De Ambulante
-                </Text>
-                <Text color={'gray.500'} fontSize={'xs'}>
-                  Admin
-                </Text>
-              </Stack>
-            )}
-            <Button size={'sm'} variant={'unstyled'} color={'gray.500'}>
-              <ChevronDownIcon fontWeight={'bold'} fontSize={'lg'} />
-            </Button>
-          </Flex>
+            <Flex alignItems={'center'} gap={1}>
+              <Avatar size={isMdScreen ? 'xs' : 'sm'} />
+              {!isMdScreen && (
+                <Stack spacing={'-6px'}>
+                  <Text fontWeight={'normal'} fontSize={'md'}>
+                    Bursa De Ambulante
+                  </Text>
+                  <Text color={'gray.500'} fontSize={'xs'}>
+                    Admin
+                  </Text>
+                </Stack>
+              )}
+              <Button size={'xs'} p={0} m={0} variant={'unstyled'} color={'gray.500'}>
+                <ChevronDownIcon fontWeight={'bold'} fontSize={'lg'} />
+              </Button>
+            </Flex>
+          </HStack>
         </Flex>
         {children}
       </Flex>
