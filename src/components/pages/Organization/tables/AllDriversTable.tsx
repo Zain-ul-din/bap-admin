@@ -62,7 +62,7 @@ const AllDriversTable = () => {
                   <Checkbox />
                 </Td>
                 <Td>
-                  <Avatar size={'sm'} />
+                  <Avatar src={'https://avatar.iran.liara.run/public'} size={'sm'} />
                 </Td>
                 <Td>Sidney Greenholt</Td>
                 <Td>Krystel_Schumm@gmail.com</Td>

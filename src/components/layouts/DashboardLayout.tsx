@@ -99,7 +99,7 @@ export default function DashboardLayout({ children }: { children?: ReactNode }) 
           </Link>
 
           <Flex alignItems={'center'}>
-            <Avatar size={isMdScreen ? 'xs' : 'sm'} />
+            <Avatar src={'/images/localization-eng.png'} size={isMdScreen ? 'xs' : 'sm'} />
             <Button size={'xs'} p={0} m={0} variant={'unstyled'} color={'gray.500'}>
               <ChevronDownIcon fontWeight={'bold'} fontSize={'lg'} />
             </Button>
@@ -108,7 +108,7 @@ export default function DashboardLayout({ children }: { children?: ReactNode }) 
             <Flex h={'15px'} w={'1px'} bg={'gray.500'}></Flex>
 
             <Flex alignItems={'center'} gap={1}>
-              <Avatar size={isMdScreen ? 'xs' : 'sm'} />
+              <Avatar src={'https://avatar.iran.liara.run/public'} size={isMdScreen ? 'xs' : 'sm'} />
               {!isMdScreen && (
                 <Stack spacing={'-6px'}>
                   <Text fontWeight={'normal'} fontSize={'md'}>

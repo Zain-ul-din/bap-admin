@@ -156,7 +156,7 @@ const Chat = () => {
 const Profile = () => {
   return (
     <Flex w={'full'} bg={'light.100'} gap={3} p={2} alignItems={'center'}>
-      <Avatar />
+      <Avatar src="https://avatar.iran.liara.run/public" />
       <Stack spacing={-1}>
         <Text fontSize={'md'} fontWeight={'bold'} maxW={'7rem'} isTruncated>
           Bilmond

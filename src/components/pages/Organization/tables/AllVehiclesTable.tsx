@@ -62,7 +62,7 @@ const AllVehiclesTable = () => {
                   <Checkbox />
                 </Td>
                 <Td>
-                  <Avatar size={'sm'} />
+                  <Avatar src={'https://avatar.iran.liara.run/public'} size={'sm'} />
                 </Td>
                 <Td>34368</Td>
                 <Td>Basic Life Support</Td>

@@ -50,7 +50,7 @@ export default function MedicalCoorp() {
                     <Checkbox />
                   </Td>
                   <Td>
-                    <Avatar size={'sm'} />
+                    <Avatar src={'https://avatar.iran.liara.run/public'} size={'sm'} />
                   </Td>
                   <Td>2</Td>
                   <Td>Ezequiel</Td>

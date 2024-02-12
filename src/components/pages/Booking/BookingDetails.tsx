@@ -222,7 +222,7 @@ const DriverDetails = ({ ...rest }: GridItemProps) => {
                 <Text fontSize={'sm'}>+34 124512515</Text>
               </HStack>
             </Stack>
-            <Avatar size={'lg'} ml={'auto'} />
+            <Avatar src={'https://avatar.iran.liara.run/public'} size={'lg'} ml={'auto'} />
           </HStack>
         </Stack>
       </Stack>
@@ -341,7 +341,7 @@ const UserDetails = ({ ...rest }: GridItemProps) => {
               <Text fontSize={'sm'}>+34 312512115</Text>
             </HStack>
           </Stack>
-          <Avatar size={'lg'} ml={'auto'} mr={3} />
+          <Avatar src={'https://avatar.iran.liara.run/public'} size={'lg'} ml={'auto'} mr={3} />
         </Flex>
       </Stack>
     </GridItem>

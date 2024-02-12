@@ -48,7 +48,7 @@ export default function ManageAdmins() {
                       <Td>2</Td>
                       <Td>Amanda</Td>
                       <Td>
-                        <Avatar size={'sm'} />
+                        <Avatar src={'https://avatar.iran.liara.run/public'} size={'sm'} />
                       </Td>
                       <Td>Admin</Td>
                       <Td>Rosemarie_Gibson@gmail.com</Td>
